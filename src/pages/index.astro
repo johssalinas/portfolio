@@ -1,0 +1,49 @@
+---
+import Badge from "../components/Badge.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import Layout from "../layouts/Layout.astro";
+import SocialPill from "../components/icons/SocialPill.astro";
+---
+
+<Layout title="Johs Salinas">
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <img
+        class="rounded-full w-16 h-16 mb-4"
+        src="/logo_johs.jpeg"
+        alt="Foto Johs"
+      />
+      <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10">
+        Hey, Soy Johs <a
+          href="https://www.linkedin.com/in/johssalinas"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2
+        class="text-2xl flex justify-center opacity-80 prose prose-invert text-wrap"
+      >
+        Más de 2 años de experiencia como Desarrollador de Software. Lideré el
+        desarrollo Embebido de terminales de pago en World POS Solutions,
+        logrando un 60% de mejora en la actualización de aplicaciones,
+        certicación de las marcas Visa y MasterCard con EMV y gran conocimiento
+        en el sector financiero.
+      </h2>
+
+      <nav class="flex gap-x-2 py-4">
+        <SocialPill href="https://www.linkedin.com/in/johssalinas">
+          <LinkedinIcon class="w-6 h-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/johssalinas">
+          <GitHubIcon class="w-6 h-6" />
+          GitHub
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
+</Layout>
