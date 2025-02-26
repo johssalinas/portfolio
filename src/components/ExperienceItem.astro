@@ -4,8 +4,9 @@ interface Props {
   description: string;
   link?: string;
   date: string;
+  isLatest?: boolean;
 }
-const { title, description, link, date } = Astro.props;
+const { title, description, link, date, isLatest } = Astro.props;
 ---
 
 <span
@@ -24,19 +25,24 @@ const { title, description, link, date } = Astro.props;
   </svg>
 </span>
 <h3
-  class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white"
+  class="flex items-center mb-1 text-lg font-semibold text-yellow-200"
 >
   {title}
-  <span
-    class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ms-3"
-    >Latest</span
-  >
+  {
+    isLatest && (
+      <span
+        class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ms-3"
+      >
+        Latest
+      </span>
+    )
+  }
 </h3>
 <time
-  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+  class="block mb-2 text-sm font-normal leading-none text-sky-200/70"
   >{date}</time
 >
-<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+<p class="mb-4 text-base font-normal text-gray-200 text-pretty">
   {description}
 </p>
 
