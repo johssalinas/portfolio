@@ -7,7 +7,9 @@ import SocialPill from "../components/icons/SocialPill.astro";
 import Mail from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import BriefCase from "../components/icons/BriefCase.astro";
+import BriefCaseIcon from "../components/icons/BriefCase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
@@ -15,7 +17,7 @@ import BriefCase from "../components/icons/BriefCase.astro";
   description="Contrata a Johs Salinas para tu próximo proyecto de desarrollo de software"
 >
   <main class="px-4">
-    <SectionContainer id="top" class="py-18 pb-18">
+    <SectionContainer id="top" class="py-18">
       <img
         class="rounded-full size-12 mb-4"
         src="/logo_johs.jpeg"
@@ -63,11 +65,18 @@ import BriefCase from "../components/icons/BriefCase.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="experiencia">
+    <SectionContainer id="experiencia" class="py-18">
       <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
-        <BriefCase class="size-8" />Experiencia Laboral
+        <BriefCaseIcon class="size-8" />Experiencia Laboral
       </h2>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos" class="py-18">
+      <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
+        <CodeIcon class="size-8" />Proyectos
+      </h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>

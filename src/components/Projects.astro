@@ -1,0 +1,65 @@
+---
+import NextIcon from "./icons/Next.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.Js",
+    class: "bg-black text-white",
+    icon: NextIcon,
+  },
+  TAILWIND: {
+    name: "TailwindCSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Helados Sofis",
+    description: "Gestión de inventario y ventas para una heladería",
+    link: "https://helados-sofis.vercel.app/entry",
+    github: "https://github.com/johssalinas/helados-sofis",
+    image: "/projects/helados-sofis.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Helados Sofis",
+    description: "Gestión de inventario y ventas para una heladería",
+    link: "https://helados-sofis.vercel.app/entry",
+    github: "https://github.com/johssalinas/helados-sofis",
+    image: "/projects/helados-sofis.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Helados Sofis",
+    description: "Gestión de inventario y ventas para una heladería",
+    link: "https://helados-sofis.vercel.app/entry",
+    github: "https://github.com/johssalinas/helados-sofis",
+    image: "/projects/helados-sofis.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article>
+      <h3 class="text-3xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg text-pretty mb-4">{description}</p>
+      <a href={link}>Ver proyecto</a>
+      <a href={github}>Ver código fuente</a>
+      <ul class="flex gap-x-2 flex-row py-3">
+        {tags.map((tag) => (
+          <li
+            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3`}
+          >
+            <tag.icon class="size-4" /> {tag.name}
+          </li>
+        ))}
+      </ul>
+      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={title} />
+    </article>
+  ))
+}
