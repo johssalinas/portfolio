@@ -1,16 +1,13 @@
 ---
-import Badge from "../components/Badge.astro";
-import GitHubIcon from "../components/icons/GitHub.astro";
-import LinkedinIcon from "../components/icons/Linkedin.astro";
 import Layout from "../layouts/Layout.astro";
-import SocialPill from "../components/icons/SocialPIll.astro";
-import Mail from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import BriefCaseIcon from "../components/icons/BriefCase.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import ContactSection from "../components/ContactSection.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ContactIcon from "../components/icons/Contact.astro";
 ---
 
 <Layout
@@ -18,53 +15,9 @@ import ContactSection from "../components/ContactSection.astro";
   description="Contrata a Johs Salinas para tu próximo proyecto de desarrollo de software"
 >
   <main class="px-4">
-    <SectionContainer id="sobremi" class="py-18">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="/logo_johs.jpeg"
-        alt="Foto Johs"
-      />
-      <h1
-        class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-4 lg:pb-6"
-      >
-        Hey, Soy Johs <a
-          href="https://www.linkedin.com/in/johssalinas"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex justify-center items-center"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2
-        class="text-xl lg:text-2xl justify-center opacity-80 prose prose-invert text-pretty max-w-[700px]"
-      >
-        Más de <span class="text-yellow-200 font-semibold"
-          >2 años de experiencia
-        </span>como Desarrollador de Software. Lideré el desarrollo Embebido de
-        terminales de pago en World POS Solutions, logrando un <span
-          class="text-red-200 font-semibold"
-          >60% de mejora en la actualización de aplicaciones</span
-        >, certicación de las marcas <span class="text-yellow-200 font-semibold"
-          >Visa y MasterCard</span
-        > con EMV y gran conocimiento en el sector financiero.
-      </h2>
-
-      <nav class="flex gap-3 py-4 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/johssalinas">
-          <LinkedinIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/johssalinas">
-          <GitHubIcon class="size-4 md:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill href="mailto:johsssalinas2work@gmail.com">
-          <Mail class="size-4 md:size-6" />
-          johssalinas2work@gmail.com
-        </SocialPill>
-      </nav>
-    </SectionContainer>
+  <SectionContainer id="sobremi" class="py-18">
+    <AboutMe />
+  </SectionContainer>
 
     <SectionContainer id="experiencia" class="py-18">
       <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
@@ -80,6 +33,12 @@ import ContactSection from "../components/ContactSection.astro";
       <Projects />
     </SectionContainer>
 
-    <ContactSection />
+    <SectionContainer id="contacto" class="py-18">
+      <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
+        <ContactIcon class="size-8" />
+        Ponte en contacto conmigo
+      </h2>
+      <ContactSection />
+    </SectionContainer>
   </main>
 </Layout>
