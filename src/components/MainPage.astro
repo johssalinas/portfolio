@@ -1,0 +1,44 @@
+---
+import Experience from "./Experience.astro";
+import SectionContainer from "./SectionContainer.astro";
+import BriefCaseIcon from "./icons/BriefCase.astro";
+import CodeIcon from "./icons/Code.astro";
+import Projects from "./Projects.astro";
+import ContactSection from "./ContactSection.astro";
+import AboutMe from "./AboutMe.astro";
+import ContactIcon from "./icons/Contact.astro";
+
+interface Props {
+  dict: any;
+  lang: string;
+}
+const { dict, lang } = Astro.props;
+---
+
+<main class="px-4">
+  <SectionContainer id="sobremi" class="py-18">
+    <AboutMe dict={dict} lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="experiencia" class="py-18">
+    <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
+      <BriefCaseIcon class="size-8" />{dict.experience.title}
+    </h2>
+    <Experience dict={dict} lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="proyectos" class="py-18">
+    <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
+      <CodeIcon class="size-8" />{dict.projects.title}
+    </h2>
+    <Projects dict={dict} lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="contacto" class="py-18">
+    <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
+      <ContactIcon class="size-8" />
+      {dict.contact.title}
+    </h2>
+    <ContactSection dict={dict} lang={lang} />
+  </SectionContainer>
+</main>

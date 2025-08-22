@@ -1,12 +1,69 @@
+---
+interface Props {
+  lang: "es" | "en";
+  dict: any;
+}
+const { lang, dict } = Astro.props;
+
+function setLang(e) {
+  const newLang = e.target.value;
+  document.cookie = `lang=${newLang};path=/;max-age=31536000`;
+  // Redirige a la ruta del idioma seleccionado
+  if (newLang === "es") {
+    window.location.pathname = "/es/";
+  } else if (newLang === "en") {
+    window.location.pathname = "/en/";
+  }
+}
+---
+
 <header
   class="sticky top-0 z-50 flex justify-center items-center py-5 w-full mx-auto bg-[#00091d]/80 backdrop-blur shadow-md"
 >
-  <span></span>
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="#top">Inicio</a>
-    <a href="#sobremi">Sobre Mí</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contacto</a>
+  <nav class="flex flex-row gap-x-10 opacity-80 items-center">
+    <a href="#top">{dict.header.home}</a>
+    <a href="#sobremi">{dict.header.about}</a>
+    <a href="#experiencia">{dict.header.experience}</a>
+    <a href="#proyectos">{dict.header.projects}</a>
+    <a href="#contacto">{dict.header.contact}</a>
+    <div style="position: relative; display: inline-block;">
+      <select
+        class="ml-4 bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium cursor-pointer px-6 py-1 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+        aria-label="Idioma"
+        id="lang-select"
+        style="padding-right: 2.5rem; min-width: 4.5rem;"
+      >
+        <option value="es" selected={lang === "es"}>ES</option>
+        <option value="en" selected={lang === "en"}>EN</option>
+      </select>
+      <svg
+        style="pointer-events:none; position:absolute; right:18px; top:50%; transform:translateY(-50%); width:1.2em; height:1.2em; color:rgb(147,197,253);"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </div>
+    <script is:inline>
+      // Espera a que el DOM esté listo
+      window.addEventListener("DOMContentLoaded", function () {
+        var select = document.getElementById("lang-select");
+        if (select) {
+          select.value = document.documentElement.lang || "es";
+          select.addEventListener("change", function (e) {
+            var newLang = e.target.value;
+            document.cookie = `lang=${newLang};path=/;max-age=31536000`;
+            if (newLang === "es") {
+              window.location.pathname = "/es/";
+            } else if (newLang === "en") {
+              window.location.pathname = "/en/";
+            }
+          });
+        }
+      });
+    </script>
   </nav>
 </header>

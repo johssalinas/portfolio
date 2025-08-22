@@ -1,7 +1,19 @@
+---
+interface Props {
+  dict: any;
+}
+const { dict } = Astro.props;
+---
+
 <>
+  <h2 class="text-center text-3xl font-bold text-yellow-200 mb-2">
+    {dict.contact?.title || "Ponte en contacto conmigo"}
+  </h2>
   <p class="text-center text-white/80 mb-8 max-w-2xl mx-auto">
-    ¿Tienes un proyecto, una idea o simplemente quieres saludar? Completa el
-    formulario y te responderé lo antes posible.
+    {
+      dict.contact?.intro ||
+        "¿Tienes un proyecto, una idea o simplemente quieres saludar? Completa el formulario y te responderé lo antes posible."
+    }
   </p>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-start">
     <div class="flex flex-col gap-2">
@@ -33,8 +45,10 @@
           </svg>
         </span>
         <div>
-          <div class="font-semibold text-white mb-1">Ubicación:</div>
-          <div class="text-white/70 text-sm">Bucaramanga, Colombia</div>
+          <div class="font-semibold text-white mb-1">
+            {dict.contact?.location}
+          </div>
+          <div class="text-white/70 text-sm">{dict.contact?.location_city}</div>
         </div>
       </a>
       <a
@@ -59,7 +73,7 @@
           >
         </span>
         <div>
-          <div class="font-semibold text-white mb-1">Teléfono / WhatsApp:</div>
+          <div class="font-semibold text-white mb-1">{dict.contact?.phone}</div>
           <div class="text-white/70 text-sm">+57 302 737 44 38</div>
         </div>
       </a>
@@ -84,7 +98,9 @@
           >
         </span>
         <div>
-          <div class="font-semibold text-white mb-1">Email:</div>
+          <div class="font-semibold text-white mb-1">
+            {dict.contact?.email_label}
+          </div>
           <div class="text-white/70 text-sm">johsssalinas2work@gmail.com</div>
         </div>
       </a>
@@ -106,7 +122,9 @@
           >
         </span>
         <div class="w-full">
-          <div class="font-semibold text-white mb-1">Agenda una reunión:</div>
+          <div class="font-semibold text-white mb-1">
+            {dict.contact?.schedule}
+          </div>
           <div class="text-white/70 text-sm">
             <iframe
               src="https://calendly.com/johssalinas2work/30min"
@@ -124,7 +142,7 @@
     >
       <div class="flex flex-col gap-2">
         <label for="nombre" class="text-sm font-medium text-white/80"
-          >Nombre</label
+          >{dict.contact?.form?.name}</label
         >
         <input
           id="nombre"
@@ -132,12 +150,12 @@
           type="text"
           required
           class="rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition"
-          placeholder="Tu nombre"
+          placeholder={dict.contact?.form?.placeholder_name}
         />
       </div>
       <div class="flex flex-col gap-2">
         <label for="email" class="text-sm font-medium text-white/80"
-          >Email</label
+          >{dict.contact?.form?.email}</label
         >
         <input
           id="email"
@@ -145,12 +163,12 @@
           type="email"
           required
           class="rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition"
-          placeholder="tucorreo@email.com"
+          placeholder={dict.contact?.form?.placeholder_email}
         />
       </div>
       <div class="flex flex-col gap-2">
         <label for="asunto" class="text-sm font-medium text-white/80"
-          >Asunto</label
+          >{dict.contact?.form?.subject}</label
         >
         <div class="relative">
           <select
@@ -160,11 +178,15 @@
             class="rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 pr-10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition appearance-none w-full"
             style="background-color: #101828; color: #fff"
           >
-            <option value="">Selecciona un asunto</option>
-            <option value="proyecto">Nuevo proyecto</option>
-            <option value="colaboracion">Colaboración</option>
-            <option value="saludo">Solo saludar</option>
-            <option value="otro">Otro</option>
+            <option value="">{dict.contact?.form?.select_subject}</option>
+            <option value="proyecto"
+              >{dict.contact?.form?.option_project}</option
+            >
+            <option value="colaboracion"
+              >{dict.contact?.form?.option_collab}</option
+            >
+            <option value="saludo">{dict.contact?.form?.option_greet}</option>
+            <option value="otro">{dict.contact?.form?.option_other}</option>
           </select>
           <svg
             class="pointer-events-none absolute right-3 top-1/2 w-5 h-5 text-yellow-200 transition-transform duration-200 select-arrow"
@@ -192,7 +214,7 @@
       </style>
       <div class="flex flex-col gap-2">
         <label for="mensaje" class="text-sm font-medium text-white/80"
-          >Mensaje</label
+          >{dict.contact?.form?.message}</label
         >
         <textarea
           id="mensaje"
@@ -201,13 +223,13 @@
           maxlength="500"
           required
           class="rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition resize-none min-h-[120px] md:min-h-[150px] max-h-[250px] md:max-h-[320px] w-full"
-          placeholder="Escribe tu mensaje..."></textarea>
+          placeholder={dict.contact?.form?.placeholder_message}></textarea>
       </div>
       <div class="flex justify-end mt-3">
         <button
           type="submit"
           class="bg-yellow-200 text-black font-semibold px-6 md:px-8 py-2 md:py-3 rounded-lg shadow hover:bg-yellow-300 transition w-full min-h-[40px]"
-          >Enviar mensaje</button
+          >{dict.contact?.form?.send}</button
         >
       </div>
     </form>

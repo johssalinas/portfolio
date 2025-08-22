@@ -1,3 +1,10 @@
+---
+interface Props {
+  dict: any;
+}
+const { dict } = Astro.props;
+---
+
 <footer
   class="rounded-lg shadow-sm bg-[#00091d] backdrop-blur-lg xl:w-[1120px] mx-auto mb-10"
 >
@@ -8,7 +15,7 @@
         class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
       >
         <img
-          src="../../public/logo_johs.jpeg"
+          src="/logo_johs.jpeg"
           class="h-8 rounded-full"
           alt="Logo of Johs Salinas"
         />
@@ -21,18 +28,21 @@
         class="flex flex-wrap items-center mb-6 text-sm font-medium text-white/90"
       >
         <li>
-          <a href="#sobremi" class="hover:underline me-4 md:me-6">Sobre Mí</a>
+          <a href="#sobremi" class="hover:underline me-4 md:me-6"
+            >{dict.footer.about}</a
+          >
         </li>
         <li>
-          <a href="#contacto" class="hover:underline">Contacto</a>
+          <a href="#contacto" class="hover:underline">{dict.footer.contact}</a>
         </li>
       </ul>
     </div>
     <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
     <span
       class="block text-sm text-yellow-200/90 sm:text-center dark:text-gray-400"
-      >© 2023 <a href="#" class="hover:underline">Johs Salinas</a>. Casi todos
-      los derechos reservados</span
+      >© 2023 <a href="#" class="hover:underline">Johs Salinas</a>. {
+        dict.footer.rights
+      }</span
     >
   </div>
 </footer>

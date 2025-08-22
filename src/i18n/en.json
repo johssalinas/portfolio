@@ -1,0 +1,51 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About Me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "lang": "EN"
+  },
+  "footer": {
+    "about": "About Me",
+    "contact": "Contact",
+    "rights": "Almost all rights reserved"
+  },
+  "about": {
+  "available": "Available for work",
+  "paragraph": "Over 3 years of experience as a Software Developer. Led embedded development of payment terminals at World POS Solutions, achieving a 60% improvement in app updates, Visa and MasterCard EMV certification, and strong knowledge in the financial sector."
+  },
+  "experience": {
+    "title": "Work Experience"
+  },
+  "projects": {
+    "title": "Projects",
+    "view_project": "See project",
+    "view_code": "See source code"
+  },
+  "contact": {
+    "title": "Get in touch with me",
+    "intro": "Do you have a project, an idea, or just want to say hello? Fill out the form and I'll get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send message",
+      "placeholder_name": "Your name",
+      "placeholder_email": "youremail@email.com",
+      "placeholder_message": "Write your message...",
+      "option_project": "New project",
+      "option_collab": "Collaboration",
+      "option_greet": "Just say hi",
+      "option_other": "Other",
+      "select_subject": "Select a subject"
+    },
+    "location": "Location:",
+    "location_city": "Bucaramanga, Colombia",
+    "phone": "Phone / WhatsApp:",
+    "email_label": "Email:",
+    "schedule": "Schedule a meeting:"
+  }
+}

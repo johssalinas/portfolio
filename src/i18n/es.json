@@ -1,0 +1,51 @@
+{
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "lang": "ES"
+  },
+  "footer": {
+    "about": "Sobre Mí",
+    "contact": "Contacto",
+    "rights": "Casi todos los derechos reservados"
+  },
+  "about": {
+  "available": "Disponible para trabajar",
+  "paragraph": "Más de 3 años de experiencia como Desarrollador de Software. Lideré el desarrollo Embebido de terminales de pago en World POS Solutions, logrando un 60% de mejora en la actualización de aplicaciones, certificación de las marcas Visa y MasterCard con EMV y gran conocimiento en el sector financiero."
+  },
+  "experience": {
+    "title": "Experiencia Laboral"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "view_project": "Ver proyecto",
+    "view_code": "Ver código fuente"
+  },
+  "contact": {
+    "title": "Ponte en contacto conmigo",
+    "intro": "¿Tienes un proyecto, una idea o simplemente quieres saludar? Completa el formulario y te responderé lo antes posible.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar mensaje",
+      "placeholder_name": "Tu nombre",
+      "placeholder_email": "tucorreo@email.com",
+      "placeholder_message": "Escribe tu mensaje...",
+      "option_project": "Nuevo proyecto",
+      "option_collab": "Colaboración",
+      "option_greet": "Solo saludar",
+      "option_other": "Otro",
+      "select_subject": "Selecciona un asunto"
+    },
+    "location": "Ubicación:",
+    "location_city": "Bucaramanga, Colombia",
+    "phone": "Teléfono / WhatsApp:",
+    "email_label": "Email:",
+    "schedule": "Agenda una reunión:"
+  }
+}

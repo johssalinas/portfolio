@@ -5,6 +5,11 @@ import LinkedinIcon from "./icons/Linkedin.astro";
 import SocialPill from "./icons/SocialPill.astro";
 import Mail from "./icons/Mail.astro";
 import SectionContainer from "./SectionContainer.astro";
+
+interface Props {
+  dict: any;
+}
+const { dict } = Astro.props;
 ---
 
 <>
@@ -22,21 +27,13 @@ import SectionContainer from "./SectionContainer.astro";
       rel="noopener noreferrer"
       class="flex justify-center items-center"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>{dict.about.available}</Badge>
     </a>
   </h1>
   <h2
     class="text-xl lg:text-2xl justify-center opacity-80 prose prose-invert text-pretty max-w-[700px]"
   >
-    Más de <span class="text-yellow-200 font-semibold"
-      >2 años de experiencia
-    </span>como Desarrollador de Software. Lideré el desarrollo Embebido de
-    terminales de pago en World POS Solutions, logrando un <span
-      class="text-red-200 font-semibold"
-      >60% de mejora en la actualización de aplicaciones</span
-    >, certicación de las marcas <span class="text-yellow-200 font-semibold"
-      >Visa y MasterCard</span
-    > con EMV y gran conocimiento en el sector financiero.
+    {dict.about.paragraph}
   </h2>
 
   <nav class="flex gap-3 py-4 flex-wrap">

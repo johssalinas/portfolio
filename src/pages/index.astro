@@ -10,35 +10,22 @@ import AboutMe from "../components/AboutMe.astro";
 import ContactIcon from "../components/icons/Contact.astro";
 ---
 
-<Layout
-  title="Johs Salinas - Desarrollador de Software"
-  description="Contrata a Johs Salinas para tu próximo proyecto de desarrollo de software"
->
-  <main class="px-4">
-    <SectionContainer id="sobremi" class="py-18">
-      <AboutMe />
-    </SectionContainer>
-
-    <SectionContainer id="experiencia" class="py-18">
-      <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
-        <BriefCaseIcon class="size-8" />Experiencia Laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer id="proyectos" class="py-18">
-      <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
-        <CodeIcon class="size-8" />Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
-
-    <SectionContainer id="contacto" class="py-18">
-      <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
-        <ContactIcon class="size-8" />
-        Ponte en contacto conmigo
-      </h2>
-      <ContactSection />
-    </SectionContainer>
-  </main>
-</Layout>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/es/" />
+    <script>
+      // Redirección JS por idioma del navegador
+      const lang = (
+        navigator.language ||
+        navigator.userLanguage ||
+        ""
+      ).toLowerCase();
+      if (lang.startsWith("en")) {
+        window.location.replace("/en/");
+      } else {
+        window.location.replace("/es/");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
