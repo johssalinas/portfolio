@@ -9,6 +9,7 @@
     "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,json}\"",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.astro",
     "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.astro --fix",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.2"
   }
 }

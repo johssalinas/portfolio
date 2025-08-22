@@ -57,6 +57,9 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
 
 packages:
 
