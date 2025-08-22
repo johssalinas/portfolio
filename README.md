@@ -1,48 +1,58 @@
-# Astro Starter Kit: Basics
+# Portafolio de Johs Salinas
 
-```sh
-npm create astro@latest -- --template basics
+¡Bienvenido/a! Este es el portafolio personal de **Johs Salinas**, desarrollador de software. Aquí encontrarás información sobre mi experiencia, proyectos destacados y formas de contactarme para colaboraciones o propuestas laborales.
+
+## 🚀 Descripción
+
+Este sitio web está construido con **Astro** y **TailwindCSS**, y tiene como objetivo mostrar mis habilidades, trayectoria profesional y proyectos relevantes de manera moderna, accesible y bilingüe (español/inglés).
+
+## 🛠️ Tecnologías principales
+
+- [Astro](https://astro.build/) (framework principal)
+- [TailwindCSS](https://tailwindcss.com/) (estilos)
+- TypeScript
+- ESLint + Prettier (calidad de código)
+- i18n (internacionalización ES/EN)
+
+## � Estructura del proyecto
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
-│   └── favicon.svg
+├── public/           # Recursos estáticos (imágenes, favicon, etc.)
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/   # Componentes reutilizables (AboutMe, Projects, etc.)
+│   ├── i18n/         # Archivos de traducción y utilidades de idioma
+│   ├── layouts/      # Layouts base
+│   ├── pages/        # Páginas principales (soporte multilenguaje)
+│   └── styles/       # Estilos globales
+├── package.json
+└── astro.config.mjs
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## ▶️ Cómo ejecutar el proyecto
 
-## 🧞 Commands
+1. Instala las dependencias:
+   ```bash
+   pnpm install
+   ```
+2. Inicia el servidor de desarrollo:
+   ```bash
+   pnpm dev
+   ```
+3. Abre `http://localhost:4321` en tu navegador.
 
-All commands are run from the root of the project, from a terminal:
+## 🧹 Scripts útiles
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- `pnpm lint` y `pnpm lint:fix`: Linting y autoformato de código.
+- `pnpm build`: Genera la versión de producción.
+- `pnpm preview`: Previsualiza el sitio generado.
 
-## 👀 Want to learn more?
+## 🤝 Contribuciones
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¿Te gustaría aportar? ¡Eres bienvenido/a! Abre un issue o pull request para sugerencias, mejoras o reportar bugs.
+
+## � Contacto
+
+- Email: johsssalinas2work@gmail.com
+- LinkedIn: [linkedin.com/in/johssalinas](https://www.linkedin.com/in/johssalinas)
+- [Formulario de contacto en el sitio](#contacto)
