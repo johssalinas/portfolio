@@ -1,8 +1,11 @@
 ---
 // Componente de sección de contacto para el portafolio
 ---
-<section id="contacto" class="w-full max-w-4xl mx-auto my-20 p-4 md:p-8 rounded-2xl bg-[#00091d]/90 shadow-2xl border border-white/10 backdrop-blur-lg">
-  <h2 class="text-center text-yellow-200 text-base font-semibold tracking-widest mb-2">CONTACTO</h2>
+<section id="contacto" class="w-full max-w-4xl mx-auto my-20 p-4 md:p-8 rounded-2xl bg-[#00091d]/90 shadow-2xl border border-white/10 backdrop-blur-lg scroll-mt-20">
+  <h2 class="text-3xl font-semibold mb-7 flex gap-x-3 items-center">
+    <svg class="size-8 text-yellow-200" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.876 1.8l-7.5 5.625a2.25 2.25 0 01-2.748 0l-7.5-5.625a2.25 2.25 0 01-.876-1.8V6.75"/></svg>
+    Contacto
+  </h2>
   <h3 class="text-center text-3xl md:text-4xl font-bold mb-4 text-white">Ponte en contacto conmigo</h3>
   <p class="text-center text-white/80 mb-10 max-w-2xl mx-auto">
     ¿Tienes un proyecto, una idea o simplemente quieres saludar? Completa el formulario y te responderé lo antes posible.
@@ -58,17 +61,31 @@
       </div>
       <div class="flex flex-col gap-2">
         <label for="asunto" class="text-sm font-medium text-white/80">Asunto</label>
-  <select id="asunto" name="asunto" required class="rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition">
-          <option value="">Selecciona un asunto</option>
-          <option value="proyecto">Nuevo proyecto</option>
-          <option value="colaboracion">Colaboración</option>
-          <option value="saludo">Solo saludar</option>
-          <option value="otro">Otro</option>
-        </select>
+        <div class="relative">
+          <select id="asunto" name="asunto" required class="rounded-lg bg-white/10 border border-white/20 px-4 py-2 pr-10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition appearance-none w-full" style="background-color: #101828; color: #fff">
+            <option value="">Selecciona un asunto</option>
+            <option value="proyecto">Nuevo proyecto</option>
+            <option value="colaboracion">Colaboración</option>
+            <option value="saludo">Solo saludar</option>
+            <option value="otro">Otro</option>
+          </select>
+          <svg class="pointer-events-none absolute right-3 top-1/2 w-5 h-5 text-yellow-200 transition-transform duration-200 select-arrow" style="transform:translateY(-50%) rotate(0deg);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </div>
+</style>
+<style>
+.select-arrow {
+  transition: transform 0.2s;
+}
+select:focus ~ .select-arrow {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+</style>
       <div class="flex flex-col gap-2">
         <label for="mensaje" class="text-sm font-medium text-white/80">Mensaje</label>
-  <textarea id="mensaje" name="mensaje" rows="4" maxlength="500" required class="rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition" placeholder="Escribe tu mensaje..."></textarea>
+    <textarea id="mensaje" name="mensaje" rows="13" maxlength="500" required class="rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-200 transition min-h-[220px] max-h-[445px] resize-none" placeholder="Escribe tu mensaje..."></textarea>
       </div>
       <div class="flex justify-end mt-2">
         <button type="submit" class="bg-yellow-200 text-black font-semibold px-8 py-2 rounded-lg shadow hover:bg-yellow-300 transition">Enviar mensaje</button>
