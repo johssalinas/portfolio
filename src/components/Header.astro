@@ -4,17 +4,6 @@ interface Props {
   dict: any;
 }
 const { lang, dict } = Astro.props;
-
-function setLang(e) {
-  const newLang = e.target.value;
-  document.cookie = `lang=${newLang};path=/;max-age=31536000`;
-  // Redirige a la ruta del idioma seleccionado
-  if (newLang === "es") {
-    window.location.pathname = "/es/";
-  } else if (newLang === "en") {
-    window.location.pathname = "/en/";
-  }
-}
 ---
 
 <header
