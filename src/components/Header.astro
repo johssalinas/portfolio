@@ -141,6 +141,52 @@ const { lang, dict } = Astro.props;
         var mobileSelect = document.getElementById("lang-select-mobile");
         var aside = document.getElementById("nav-aside");
 
+        // --- Scrollspy ---
+        // IDs de secciones y sus enlaces
+        var sectionIds = ["sobremi", "experiencia", "proyectos", "contacto"];
+        var navLinks = Array.from(document.querySelectorAll("ul.md\\:flex a"));
+        var mobileLinks = Array.from(document.querySelectorAll("#nav-aside a"));
+
+        function onScrollSpy() {
+          var scrollPos = window.scrollY || window.pageYOffset;
+          var offset = 80; // altura del header
+          var current = null;
+          for (var i = 0; i < sectionIds.length; i++) {
+            var sec = document.getElementById(sectionIds[i]);
+            if (sec) {
+              var top = sec.offsetTop - offset;
+              var bottom = top + sec.offsetHeight;
+              if (scrollPos >= top && scrollPos < bottom) {
+                current = sectionIds[i];
+                break;
+              }
+            }
+          }
+          // Quitar clase activa de todos
+          navLinks.forEach(function (link) {
+            link.classList.remove("text-blue-400", "font-bold");
+          });
+          mobileLinks.forEach(function (link) {
+            link.classList.remove("text-blue-400", "font-bold");
+          });
+          // Agregar clase activa al actual
+          if (current) {
+            navLinks.forEach(function (link) {
+              if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("text-blue-400", "font-bold");
+              }
+            });
+            mobileLinks.forEach(function (link) {
+              if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("text-blue-400", "font-bold");
+              }
+            });
+          }
+        }
+        window.addEventListener("scroll", onScrollSpy, { passive: true });
+        // Llamar al cargar
+        onScrollSpy();
+
         function setLangAndRedirect(newLang) {
           document.cookie = "lang=" + newLang + ";path=/;max-age=31536000";
           if (newLang === "es") {
