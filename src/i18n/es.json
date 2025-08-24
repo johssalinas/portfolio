@@ -47,5 +47,62 @@
     "phone": "Teléfono / WhatsApp:",
     "email_label": "Email:",
     "schedule": "Agenda una reunión:"
+  },
+  "cv": {
+    "name": "Johs Salinas",
+    "contact": {
+      "github": "github.com/johssalinas",
+      "phone": "+57 3027374438",
+      "email": "johssalinas2work@gmail.com"
+    },
+    "summary": "QA Engineer con experiencia en el sector financiero y web, especializado en la validación de sistemas críticos y en asegurar la calidad de plataformas complejas. Experto en automatización de pruebas, CI/CD y testing de APIs REST.",
+    "sections": {
+      "experience": "Experiencia Laboral",
+      "education": "Educación"
+    },
+    "experiences": [
+      {
+        "company": "World Digital Solutions SAS",
+        "location": "Bucaramanga, Colombia [SectorBancario]",
+        "role": "QA Tester",
+        "dates": "Noviembre 2022 - Actualidad",
+        "bullets": [
+          "Validación de transacciones financieras bajo estándares JSON, incluyendo pruebas exhaustivas de APIs REST utilizando Postman para verificar códigos de estado, formatos de respuesta y casos edge.",
+          "Implementación de pruebas de funcionalidades críticas como sistemas de pagos QR.",
+          "Diseño y ejecución planes de testing para sistemas de actualizaciones remotas, validando integridad de datos y reduciendo errores de actualización.",
+          "Colaboración con equipos internacionales en la identificación, documentación y validación de correcciones de defectos en hardware y software.",
+          "Liderazgo en procesos de certificación EMV para Visa y MasterCard en Bolivia."
+        ],
+        "specialties": "regresión | funcionales | usabilidad | rendimiento | estrés | seguridad",
+        "skills": "JavaScript | TypeScript | HTML | CSS | Postman | Cypress | REST | JSON | Linux | PostgresSQL"
+      },
+      {
+        "company": "Colsapiens SAS",
+        "location": "Bucaramanga, Colombia [Industria Alimentaria]",
+        "role": "Analista QA",
+        "dates": "Enero 2022 - Noviembre 2022",
+        "bullets": [
+          "Diseño e implementación de estrategias de testing automatizado: unitarias, integración y E2E.",
+          "Optimización de pipelines de CI/CD integrando múltiples tipos de pruebas automatizadas.",
+          "Mejora de procesos de testing mediante optimización de entornos y migración a WSL."
+        ],
+        "specialties": "integración | unitarias | rendimiento | APIs | E2E",
+        "skills": "Python | HTML | CSS | Jest | REST | JSON | JWT | MySQL | MongoDB"
+      }
+    ],
+    "education": [
+      {
+        "school": "Unidades Tecnológicas de Santander",
+        "location": "Bucaramanga, Colombia",
+        "degree": "Ingeniería en sistemas",
+        "dates": "Enero 2021 - Actualidad"
+      },
+      {
+        "school": "Institución Educativa Nuestra Señora De La Presentación",
+        "location": "San Gil, Colombia",
+        "degree": "Técnico en sistemas",
+        "dates": "Enero 2019 – Diciembre 2020"
+      }
+    ]
   }
 }

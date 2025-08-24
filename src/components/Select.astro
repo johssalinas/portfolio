@@ -1,0 +1,114 @@
+---
+interface Opt {
+  value: string;
+  label: string;
+}
+interface Props {
+  id?: string;
+  options: Opt[];
+  selected?: string;
+  ariaLabel?: string;
+  className?: string;
+  mobile?: boolean;
+}
+const {
+  id = undefined,
+  options = [],
+  selected = undefined,
+  ariaLabel = undefined,
+  className = undefined,
+  mobile = false,
+} = Astro.props as Props;
+---
+
+<div class="select-wrapper relative inline-block" data-select-id={id}>
+  <select
+    id={id}
+    aria-label={ariaLabel}
+    class={className
+      ? `${className} pr-10`
+      : mobile
+        ? "w-full bg-blue-900 text-blue-100 border border-blue-300 rounded-lg px-4 py-2 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300"
+        : "mr-3 bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium cursor-pointer px-4 py-1 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300 transition"}
+  >
+    {
+      options.map((opt) => (
+        <option value={opt.value} selected={selected === opt.value}>
+          {opt.label}
+        </option>
+      ))
+    }
+  </select>
+
+  <svg
+    class="select-arrow pointer-events-none absolute right-3 text-blue-100"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M19 9l-7 7-7-7"></path>
+  </svg>
+
+  <style>
+    /* center the arrow vertically and animate rotation on open */
+    .select-wrapper {
+      position: relative;
+    }
+    .select-wrapper .select-arrow {
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.18s ease;
+      position: absolute;
+    }
+    .select-wrapper.select-open .select-arrow {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      // use closest to reliably find this wrapper even if scripts are moved
+      var script = document.currentScript;
+      if (!script) return;
+      var wrapper = script.closest(".select-wrapper");
+      if (!wrapper) return;
+      var sel = wrapper.querySelector("select");
+      if (!sel) return;
+
+      function open() {
+        wrapper.classList.add("select-open");
+      }
+      function close() {
+        wrapper.classList.remove("select-open");
+      }
+
+      // interactions that likely open the native dropdown
+      sel.addEventListener("mousedown", open);
+      sel.addEventListener("focus", open);
+      sel.addEventListener("keydown", function (e) {
+        if (e.key === " " || e.key === "Enter" || e.key === "ArrowDown") open();
+      });
+
+      // ensure close on blur or after change
+      sel.addEventListener("blur", close);
+      sel.addEventListener("change", function () {
+        setTimeout(close, 120);
+      });
+
+      // click outside: if user clicks outside the wrapper, close it
+      function onDocClick(e) {
+        if (!wrapper.contains(e.target)) close();
+      }
+      document.addEventListener("click", onDocClick);
+
+      // cleanup if needed when element is removed (best-effort)
+      // not strictly necessary for short-lived pages
+    })();
+  </script>
+</div>

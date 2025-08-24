@@ -1,0 +1,27 @@
+---
+const { ed } = Astro.props as { ed: any };
+---
+
+<div class="educacion-item">
+  <div class="educacion-header">
+    <span>{ed.school}</span>
+    <span>{ed.location}</span>
+  </div>
+  <div class="educacion-sub">{ed.degree}</div>
+  <div class="educacion-sub">{ed.dates}</div>
+</div>
+
+<style>
+  .educacion-item {
+    margin-bottom: 10pt;
+  }
+  .educacion-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .educacion-sub {
+    font-size: 11pt;
+  }
+</style>

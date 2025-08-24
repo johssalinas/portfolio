@@ -1,0 +1,19 @@
+---
+const { contact } = Astro.props as { contact: any };
+---
+
+<div class="contacto-inline">
+  <span>{contact.github}</span>
+  <span> · </span>
+  <span>{contact.phone}</span>
+  <span> · </span>
+  <span>{contact.email}</span>
+</div>
+
+<style>
+  .contacto-inline {
+    text-align: center;
+    font-size: 10pt;
+    margin-bottom: 16pt;
+  }
+</style>

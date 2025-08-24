@@ -1,0 +1,47 @@
+---
+const { item } = Astro.props as { item: any };
+---
+
+<div class="experiencia">
+  <div class="experiencia-header">
+    <span>{item.company}</span>
+    <span>{item.location}</span>
+  </div>
+  <div class="experiencia-subtitle">{item.role} — {item.dates}</div>
+  <ul>
+    {item.bullets.map((b: string) => <li>{b}</li>)}
+  </ul>
+  <div class="especialidades">
+    <b>Especialidades en Testing:</b>
+    {item.specialties}
+  </div>
+  <div class="habilidades"><b>Habilidades:</b> {item.skills}</div>
+</div>
+
+<style>
+  .experiencia {
+    margin-bottom: 12pt;
+  }
+  .experiencia-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .experiencia-subtitle {
+    font-size: 11pt;
+    font-style: italic;
+    margin-bottom: 4pt;
+  }
+  ul {
+    margin: 4pt 0 8pt 20pt;
+  }
+  li {
+    margin-bottom: 2pt;
+  }
+  .especialidades,
+  .habilidades {
+    font-size: 10pt;
+    margin-bottom: 6pt;
+  }
+</style>

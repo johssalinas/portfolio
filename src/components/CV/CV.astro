@@ -1,0 +1,134 @@
+---
+import type { Lang } from "../../i18n/i18n";
+import { getDict } from "../../i18n/i18n";
+const { lang = "es" } = Astro.props as { lang?: Lang };
+const dict = getDict(lang as Lang).cv as any;
+---
+
+<div class="cv-container">
+  <h1>{dict.name}</h1>
+  <div class="contacto">
+    {dict.contact.github} · {dict.contact.phone} · {dict.contact.email}
+  </div>
+  <div class="resumen">{dict.summary}</div>
+
+  <div class="section-title">{dict.sections.experience}</div>
+  {
+    dict.experiences.map((e: any) => (
+      <div class="experiencia">
+        <div class="experiencia-header">
+          <span>{e.company}</span>
+          <span>{e.location}</span>
+        </div>
+        <div class="experiencia-subtitle">
+          {e.role} — {e.dates}
+        </div>
+        <ul>
+          {e.bullets.map((b: string) => (
+            <li>{b}</li>
+          ))}
+        </ul>
+        <div class="especialidades">
+          <b>Especialidades en Testing:</b> {e.specialties}
+        </div>
+        <div class="habilidades">
+          <b>Habilidades:</b> {e.skills}
+        </div>
+      </div>
+    ))
+  }
+
+  <div class="section-title">{dict.sections.education}</div>
+  {
+    dict.education.map((ed: any) => (
+      <div class="educacion-item">
+        <div class="educacion-header">
+          <span>{ed.school}</span>
+          <span>{ed.location}</span>
+        </div>
+        <div class="educacion-sub">{ed.degree}</div>
+        <div class="educacion-sub">{ed.dates}</div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  /* Mantener estilos similares al HTML original */
+  .cv-container {
+    max-width: 800px;
+    background: #fff;
+    padding: 2cm;
+    margin: 20px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+  }
+  h1 {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+  .contacto {
+    text-align: center;
+    font-size: 10pt;
+    margin-bottom: 16pt;
+  }
+  .resumen {
+    text-align: justify;
+    margin-bottom: 14pt;
+  }
+  .section-title {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+  }
+  .experiencia {
+    margin-bottom: 12pt;
+  }
+  .experiencia-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .experiencia-subtitle {
+    font-size: 11pt;
+    font-style: italic;
+    margin-bottom: 4pt;
+  }
+  ul {
+    margin: 4pt 0 8pt 20pt;
+  }
+  li {
+    margin-bottom: 2pt;
+  }
+  .especialidades,
+  .habilidades {
+    font-size: 10pt;
+    margin-bottom: 6pt;
+  }
+  .educacion-item {
+    margin-bottom: 10pt;
+  }
+  .educacion-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  .educacion-sub {
+    font-size: 11pt;
+  }
+  @media print {
+    .cv-container {
+      box-shadow: none;
+      max-width: 100%;
+      padding: 1cm;
+    }
+  }
+</style>

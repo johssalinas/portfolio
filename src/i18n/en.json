@@ -47,5 +47,62 @@
     "phone": "Phone / WhatsApp:",
     "email_label": "Email:",
     "schedule": "Schedule a meeting:"
+  },
+  "cv": {
+    "name": "Johs Salinas",
+    "contact": {
+      "github": "github.com/johssalinas",
+      "phone": "+57 3027374438",
+      "email": "johssalinas2work@gmail.com"
+    },
+    "summary": "QA Engineer with experience in the financial and web sectors, specialized in validation of critical systems and ensuring quality of complex platforms. Skilled in test automation, CI/CD and REST API testing.",
+    "sections": {
+      "experience": "Work Experience",
+      "education": "Education"
+    },
+    "experiences": [
+      {
+        "company": "World Digital Solutions SAS",
+        "location": "Bucaramanga, Colombia [Financial Sector]",
+        "role": "QA Tester",
+        "dates": "November 2022 – Present",
+        "bullets": [
+          "Validation of financial transactions under JSON standards, including thorough testing of REST APIs using Postman to verify status codes, response formats and edge cases.",
+          "Implementation of tests for critical functionalities like QR payment systems.",
+          "Design and execution of testing plans for remote update systems, validating data integrity and reducing update errors.",
+          "Collaboration with international teams in defect identification, documentation and verification.",
+          "Leading EMV certification processes for Visa and MasterCard in Bolivia."
+        ],
+        "specialties": "regression | functional | usability | performance | stress | security",
+        "skills": "JavaScript | TypeScript | HTML | CSS | Postman | Cypress | REST | JSON | Linux | PostgresSQL"
+      },
+      {
+        "company": "Colsapiens SAS",
+        "location": "Bucaramanga, Colombia [Food Industry]",
+        "role": "QA Analyst",
+        "dates": "January 2022 - November 2022",
+        "bullets": [
+          "Design and implementation of automated testing strategies: unit, integration and E2E.",
+          "Optimization of CI/CD pipelines integrating multiple automated test types.",
+          "Improving testing processes by optimizing environments and migrating to WSL."
+        ],
+        "specialties": "integration | unit | performance | APIs | E2E",
+        "skills": "Python | HTML | CSS | Jest | REST | JSON | JWT | MySQL | MongoDB"
+      }
+    ],
+    "education": [
+      {
+        "school": "Unidades Tecnológicas de Santander",
+        "location": "Bucaramanga, Colombia",
+        "degree": "Systems Engineering",
+        "dates": "January 2021 - Present"
+      },
+      {
+        "school": "Institución Educativa Nuestra Señora De La Presentación",
+        "location": "San Gil, Colombia",
+        "degree": "Systems Technician",
+        "dates": "January 2019 – December 2020"
+      }
+    ]
   }
 }

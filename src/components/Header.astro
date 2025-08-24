@@ -4,6 +4,7 @@ interface Props {
   dict: any;
 }
 const { lang, dict } = Astro.props;
+import Select from "./Select.astro";
 ---
 
 <header
@@ -36,41 +37,43 @@ const { lang, dict } = Astro.props;
         </svg>
       </button>
 
-      <a href="#top" class="text-sm font-medium">{dict.header.home}</a>
+      <a href={`/${lang}/#top`} class="text-sm font-medium"
+        >{dict.header.home}</a
+      >
     </div>
 
     <!-- Desktop nav -->
     <ul class="hidden md:flex md:items-center md:gap-x-8 text-sm opacity-90">
-      <li><a href="#sobremi">{dict.header.about}</a></li>
-      <li><a href="#experiencia">{dict.header.experience}</a></li>
-      <li><a href="#proyectos">{dict.header.projects}</a></li>
-      <li><a href="#contacto">{dict.header.contact}</a></li>
+      <li><a href={`/${lang}/#sobremi`}>{dict.header.about}</a></li>
+      <li><a href={`/${lang}/#experiencia`}>{dict.header.experience}</a></li>
+      <li><a href={`/${lang}/#proyectos`}>{dict.header.projects}</a></li>
+      <li><a href={`/${lang}/#contacto`}>{dict.header.contact}</a></li>
     </ul>
 
     <!-- Right: language select + mobile button -->
     <div class="flex items-center gap-3">
       <div class="hidden md:block relative">
-        <select
-          class="ml-4 bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium cursor-pointer px-6 py-1 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
-          aria-label="Idioma"
+        <!-- CV actions select -->
+        <Select
+          id="cv-select"
+          ariaLabel="CV actions"
+          options={[
+            { value: "", label: "Ver CV / Descargar CV" },
+            { value: "view", label: "Ver CV" },
+            { value: "download", label: "Descargar CV" },
+          ]}
+          selected={""}
+        />
+        <Select
           id="lang-select"
-          style="padding-right: 2.5rem; min-width: 4.5rem;"
-        >
-          <option value="es" selected={lang === "es"}>ES</option>
-          <option value="en" selected={lang === "en"}>EN</option>
-        </select>
-        <svg
-          style="pointer-events:none; position:absolute; right:18px; top:50%; transform:translateY(-50%); width:1.2em; height:1.2em; color:rgb(147,197,253);"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19 9l-7 7-7-7"></path>
-        </svg>
+          ariaLabel="Idioma"
+          className="ml-4 bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium cursor-pointer px-6 py-1 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+          options={[
+            { value: "es", label: "ES" },
+            { value: "en", label: "EN" },
+          ]}
+          selected={lang}
+        />
       </div>
 
       <!-- space reserved for right-side controls on desktop -->
@@ -108,23 +111,48 @@ const { lang, dict } = Astro.props;
             </svg>
           </button>
 
-          <a href="#top" class="block text-base font-medium"
+          <a href={`/${lang}/#top`} class="block text-base font-medium"
             >{dict.header.home}</a
           >
-          <a href="#sobremi" class="block py-2">{dict.header.about}</a>
-          <a href="#experiencia" class="block py-2">{dict.header.experience}</a>
-          <a href="#proyectos" class="block py-2">{dict.header.projects}</a>
-          <a href="#contacto" class="block py-2">{dict.header.contact}</a>
+          <a href={`/${lang}/#sobremi`} class="block py-2"
+            >{dict.header.about}</a
+          >
+          <a href={`/${lang}/#experiencia`} class="block py-2"
+            >{dict.header.experience}</a
+          >
+          <a href={`/${lang}/#proyectos`} class="block py-2"
+            >{dict.header.projects}</a
+          >
+          <a href={`/${lang}/#contacto`} class="block py-2"
+            >{dict.header.contact}</a
+          >
 
           <div class="mt-auto">
             <label for="lang-select-mobile" class="sr-only">Idioma</label>
-            <select
+            <Select
               id="lang-select-mobile"
-              class="w-full bg-blue-900 text-blue-100 border border-blue-300 rounded-lg px-4 py-2 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300"
-            >
-              <option value="es" selected={lang === "es"}>ES</option>
-              <option value="en" selected={lang === "en"}>EN</option>
-            </select>
+              mobile
+              ariaLabel="Idioma"
+              options={[
+                { value: "es", label: "ES" },
+                { value: "en", label: "EN" },
+              ]}
+              selected={lang}
+            />
+          </div>
+          <div class="mt-4">
+            <label for="cv-select-mobile" class="sr-only">CV actions</label>
+            <Select
+              id="cv-select-mobile"
+              mobile
+              ariaLabel="CV actions"
+              options={[
+                { value: "", label: "CV" },
+                { value: "view", label: "Ver CV" },
+                { value: "download", label: "Descargar CV" },
+              ]}
+              selected={""}
+            />
           </div>
         </aside>
       </div>
@@ -207,6 +235,40 @@ const { lang, dict } = Astro.props;
         if (mobileSelect)
           mobileSelect.addEventListener("change", function (e) {
             setLangAndRedirect(e.target.value);
+          });
+
+        // CV select handlers (desktop + mobile)
+        var cvSelect = document.getElementById("cv-select");
+        var cvSelectMobile = document.getElementById("cv-select-mobile");
+
+        function handleCvAction(value) {
+          if (!value) return;
+          var currentLang = document.documentElement.lang || initial || "es";
+          if (value === "view") {
+            // Redirigir a la página del CV según idioma
+            if (currentLang === "en") window.location.pathname = "/en/cv/";
+            else window.location.pathname = "/es/cv/";
+          } else if (value === "download") {
+            // Descarga de PDF pendiente: apunta a /assets/cv.pdf
+            var link = document.createElement("a");
+            link.href = "/assets/cv.pdf";
+            link.download = "";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            // reset select to default
+            if (cvSelect) cvSelect.value = "";
+            if (cvSelectMobile) cvSelectMobile.value = "";
+          }
+        }
+
+        if (cvSelect)
+          cvSelect.addEventListener("change", function (e) {
+            handleCvAction(e.target.value);
+          });
+        if (cvSelectMobile)
+          cvSelectMobile.addEventListener("change", function (e) {
+            handleCvAction(e.target.value);
           });
 
         function openMenu() {
