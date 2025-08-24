@@ -31,6 +31,13 @@ const { title, description, dict, lang } = Astro.props;
     <Header lang={lang as "es" | "en"} dict={dict} />
     <slot />
     <Footer dict={dict} />
+    <!-- Flowbite JS: usar CDN para inicializar data-attributes en el navegador -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
+    ></script>
+    <script type="module">
+      import("../client/header");
+    </script>
   </body>
 </html>
 

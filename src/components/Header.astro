@@ -4,23 +4,23 @@ interface Props {
   dict: any;
 }
 const { lang, dict } = Astro.props;
-import Select from "./Select.astro";
 ---
 
-<header
-  class="sticky top-0 z-50 flex justify-center items-center py-5 w-full mx-auto bg-[#00091d]/80 backdrop-blur shadow-md"
->
-  <nav class="w-full max-w-5xl px-4 mx-auto flex items-center justify-between">
-    <!-- Left: mobile menu button + logo / home -->
+<header class="sticky top-0 z-50 bg-[#00091d]/80 backdrop-blur shadow-md">
+  <nav
+    class="w-full max-w-5xl px-4 mx-auto flex items-center justify-between py-5"
+    aria-label="Main navigation"
+  >
     <div class="flex items-center gap-4">
+      <!-- Flowbite collapse toggle for mobile -->
       <button
-        id="nav-toggle"
-        aria-controls="nav-menu"
-        aria-expanded="false"
+        data-collapse-toggle="mobile-menu"
+        type="button"
         class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-blue-100 bg-[#00091d] backdrop-blur shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
       >
-        <span class="sr-only">Open main menu</span>
-        <!-- Hamburger icon -->
+        <span class="sr-only">{dict.header.open_menu}</span>
         <svg
           class="h-6 w-6"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ import Select from "./Select.astro";
         </svg>
       </button>
 
-      <a href={`/${lang}/#top`} class="text-sm font-medium"
+      <a href={`/${lang}/#top`} class="text-sm font-medium text-blue-100"
         >{dict.header.home}</a
       >
     </div>
@@ -50,262 +50,88 @@ import Select from "./Select.astro";
       <li><a href={`/${lang}/#contacto`}>{dict.header.contact}</a></li>
     </ul>
 
-    <!-- Right: language select + mobile button -->
     <div class="flex items-center gap-3">
-      <div class="hidden md:block relative">
-        <!-- CV actions select -->
-        <Select
-          id="cv-select"
-          ariaLabel="CV actions"
-          options={[
-            { value: "", label: "Ver CV / Descargar CV" },
-            { value: "view", label: "Ver CV" },
-            { value: "download", label: "Descargar CV" },
-          ]}
-          selected={""}
-        />
-        <Select
-          id="lang-select"
-          ariaLabel="Idioma"
-          className="ml-4 bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium cursor-pointer px-6 py-1 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
-          options={[
-            { value: "es", label: "ES" },
-            { value: "en", label: "EN" },
-          ]}
-          selected={lang}
-        />
-      </div>
-
-      <!-- space reserved for right-side controls on desktop -->
-    </div>
-
-    <!-- Mobile menu (fixed panel) -->
-    <div id="nav-menu" class="md:hidden">
-      <div id="nav-panel" class="hidden fixed inset-0 z-50">
-        <!-- Backdrop -->
-        <div id="nav-backdrop" class="absolute inset-0 bg-black/30"></div>
-
-        <!-- Panel: occupy full height and half width (tablet and up 40%) -->
-        <aside
-          id="nav-aside"
-          class="fixed left-0 top-0 w-1/2 md:w-1/3 h-screen bg-[#00091d] backdrop-blur-lg p-6 flex flex-col gap-4 text-sm text-blue-100 shadow-lg"
-          aria-hidden="true"
-        >
+      <div class="hidden md:flex items-center gap-4">
+        <!-- CV dropdown (Flowbite) -->
+        <div class="relative">
           <button
-            id="nav-close"
-            aria-label="Cerrar menú"
-            class="self-end p-2 rounded-md text-blue-100 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            id="cv-dropdown-button"
+            data-dropdown-toggle="cv-dropdown"
+            class="text-sm bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium px-4 py-1 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            type="button"
           >
-            <svg
-              class="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+            {lang === "es" ? "CV" : "CV"}
           </button>
-
-          <a href={`/${lang}/#top`} class="block text-base font-medium"
-            >{dict.header.home}</a
+          <div
+            id="cv-dropdown"
+            class="hidden z-10 w-44 bg-[#071025] rounded divide-y divide-gray-600 shadow"
           >
-          <a href={`/${lang}/#sobremi`} class="block py-2"
-            >{dict.header.about}</a
-          >
-          <a href={`/${lang}/#experiencia`} class="block py-2"
-            >{dict.header.experience}</a
-          >
-          <a href={`/${lang}/#proyectos`} class="block py-2"
-            >{dict.header.projects}</a
-          >
-          <a href={`/${lang}/#contacto`} class="block py-2"
-            >{dict.header.contact}</a
-          >
-
-          <div class="mt-auto">
-            <label for="lang-select-mobile" class="sr-only">Idioma</label>
-            <Select
-              id="lang-select-mobile"
-              mobile
-              ariaLabel="Idioma"
-              options={[
-                { value: "es", label: "ES" },
-                { value: "en", label: "EN" },
-              ]}
-              selected={lang}
-            />
+            <ul
+              class="py-1 text-sm text-blue-100"
+              aria-labelledby="cv-dropdown-button"
+            >
+              <li>
+                <a href={`/${lang}/cv/`} class="block px-4 py-2">Ver CV</a>
+              </li>
+              <li>
+                <a href="/assets/cv.pdf" download class="block px-4 py-2"
+                  >Descargar CV</a
+                >
+              </li>
+            </ul>
           </div>
-          <div class="mt-4">
-            <label for="cv-select-mobile" class="sr-only">CV actions</label>
-            <Select
-              id="cv-select-mobile"
-              mobile
-              ariaLabel="CV actions"
-              options={[
-                { value: "", label: "CV" },
-                { value: "view", label: "Ver CV" },
-                { value: "download", label: "Descargar CV" },
-              ]}
-              selected={""}
-            />
+        </div>
+
+        <!-- Language dropdown (Flowbite) -->
+        <div class="relative">
+          <button
+            id="lang-dropdown-button"
+            data-dropdown-toggle="lang-dropdown"
+            class="ml-2 text-sm bg-blue-900 text-blue-100 border border-blue-300 rounded-lg text-base font-medium px-4 py-1 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            type="button"
+          >
+            {lang === "es" ? "ES" : "EN"}
+          </button>
+          <div
+            id="lang-dropdown"
+            class="hidden z-10 w-32 bg-[#071025] rounded divide-y divide-gray-600 shadow"
+          >
+            <ul
+              class="py-1 text-sm text-blue-100"
+              aria-labelledby="lang-dropdown-button"
+            >
+              <li><a href="/es/" class="block px-4 py-2">ES</a></li>
+              <li><a href="/en/" class="block px-4 py-2">EN</a></li>
+            </ul>
           </div>
-        </aside>
+        </div>
       </div>
     </div>
 
-    <script is:inline>
-      // Panel móvil: open/close con backdrop, bloqueo de scroll y manejo de idioma
-      window.addEventListener("DOMContentLoaded", function () {
-        var toggle = document.getElementById("nav-toggle");
-        var panel = document.getElementById("nav-panel");
-        var backdrop = document.getElementById("nav-backdrop");
-        var closeBtn = document.getElementById("nav-close");
-        var desktopSelect = document.getElementById("lang-select");
-        var mobileSelect = document.getElementById("lang-select-mobile");
-        var aside = document.getElementById("nav-aside");
+    <!-- Mobile menu (collapsible) -->
+    <div class="md:hidden w-full hidden" id="mobile-menu">
+      <div class="py-4 px-4 bg-[#00091d] text-blue-100 rounded-b-lg">
+        <a href={`/${lang}/#sobremi`} class="block py-2">{dict.header.about}</a>
+        <a href={`/${lang}/#experiencia`} class="block py-2"
+          >{dict.header.experience}</a
+        >
+        <a href={`/${lang}/#proyectos`} class="block py-2"
+          >{dict.header.projects}</a
+        >
+        <a href={`/${lang}/#contacto`} class="block py-2"
+          >{dict.header.contact}</a
+        >
 
-        // --- Scrollspy ---
-        // IDs de secciones y sus enlaces
-        var sectionIds = ["sobremi", "experiencia", "proyectos", "contacto"];
-        var navLinks = Array.from(document.querySelectorAll("ul.md\\:flex a"));
-        var mobileLinks = Array.from(document.querySelectorAll("#nav-aside a"));
+        <div class="mt-4">
+          <a href="/es/" class="block py-2">ES</a>
+          <a href="/en/" class="block py-2">EN</a>
+        </div>
 
-        function onScrollSpy() {
-          var scrollPos = window.scrollY || window.pageYOffset;
-          var offset = 80; // altura del header
-          var current = null;
-          for (var i = 0; i < sectionIds.length; i++) {
-            var sec = document.getElementById(sectionIds[i]);
-            if (sec) {
-              var top = sec.offsetTop - offset;
-              var bottom = top + sec.offsetHeight;
-              if (scrollPos >= top && scrollPos < bottom) {
-                current = sectionIds[i];
-                break;
-              }
-            }
-          }
-          // Quitar clase activa de todos
-          navLinks.forEach(function (link) {
-            link.classList.remove("text-blue-400", "font-bold");
-          });
-          mobileLinks.forEach(function (link) {
-            link.classList.remove("text-blue-400", "font-bold");
-          });
-          // Agregar clase activa al actual
-          if (current) {
-            navLinks.forEach(function (link) {
-              if (link.getAttribute("href") === "#" + current) {
-                link.classList.add("text-blue-400", "font-bold");
-              }
-            });
-            mobileLinks.forEach(function (link) {
-              if (link.getAttribute("href") === "#" + current) {
-                link.classList.add("text-blue-400", "font-bold");
-              }
-            });
-          }
-        }
-        window.addEventListener("scroll", onScrollSpy, { passive: true });
-        // Llamar al cargar
-        onScrollSpy();
-
-        function setLangAndRedirect(newLang) {
-          document.cookie = "lang=" + newLang + ";path=/;max-age=31536000";
-          if (newLang === "es") {
-            window.location.pathname = "/es/";
-          } else if (newLang === "en") {
-            window.location.pathname = "/en/";
-          }
-        }
-
-        var initial = document.documentElement.lang || "es";
-        if (desktopSelect) desktopSelect.value = initial;
-        if (mobileSelect) mobileSelect.value = initial;
-
-        if (desktopSelect)
-          desktopSelect.addEventListener("change", function (e) {
-            setLangAndRedirect(e.target.value);
-          });
-        if (mobileSelect)
-          mobileSelect.addEventListener("change", function (e) {
-            setLangAndRedirect(e.target.value);
-          });
-
-        // CV select handlers (desktop + mobile)
-        var cvSelect = document.getElementById("cv-select");
-        var cvSelectMobile = document.getElementById("cv-select-mobile");
-
-        function handleCvAction(value) {
-          if (!value) return;
-          var currentLang = document.documentElement.lang || initial || "es";
-          if (value === "view") {
-            // Redirigir a la página del CV según idioma
-            if (currentLang === "en") window.location.pathname = "/en/cv/";
-            else window.location.pathname = "/es/cv/";
-          } else if (value === "download") {
-            // Descarga de PDF pendiente: apunta a /assets/cv.pdf
-            var link = document.createElement("a");
-            link.href = "/assets/cv.pdf";
-            link.download = "";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            // reset select to default
-            if (cvSelect) cvSelect.value = "";
-            if (cvSelectMobile) cvSelectMobile.value = "";
-          }
-        }
-
-        if (cvSelect)
-          cvSelect.addEventListener("change", function (e) {
-            handleCvAction(e.target.value);
-          });
-        if (cvSelectMobile)
-          cvSelectMobile.addEventListener("change", function (e) {
-            handleCvAction(e.target.value);
-          });
-
-        function openMenu() {
-          if (!panel) return;
-          panel.classList.remove("hidden");
-          toggle.setAttribute("aria-expanded", "true");
-          if (aside) aside.setAttribute("aria-hidden", "false");
-          document.body.style.overflow = "hidden";
-        }
-
-        function closeMenu() {
-          if (!panel) return;
-          panel.classList.add("hidden");
-          toggle.setAttribute("aria-expanded", "false");
-          if (aside) aside.setAttribute("aria-hidden", "true");
-          document.body.style.overflow = "";
-        }
-
-        if (toggle) {
-          toggle.addEventListener("click", function () {
-            var expanded = toggle.getAttribute("aria-expanded") === "true";
-            if (expanded) closeMenu();
-            else openMenu();
-          });
-        }
-
-        if (closeBtn) closeBtn.addEventListener("click", closeMenu);
-        if (backdrop) backdrop.addEventListener("click", closeMenu);
-
-        // close on escape
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") closeMenu();
-        });
-
-        // ensure closed initially
-        if (panel) panel.classList.add("hidden");
-      });
-    </script>
+        <div class="mt-4">
+          <a href={`/${lang}/cv/`} class="block py-2">Ver CV</a>
+          <a href="/assets/cv.pdf" download class="block py-2">Descargar CV</a>
+        </div>
+      </div>
+    </div>
   </nav>
 </header>

@@ -1,6 +1,6 @@
 module.exports = {
   '*.{ts,tsx}': [
-    'pnpm typecheck',
+  'bash -c "pnpm typecheck"',
     'pnpm format',
     'pnpm lint:fix'
   ],
