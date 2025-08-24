@@ -37,7 +37,9 @@ const { lang, dict } = Astro.props;
         </svg>
       </button>
 
-      <a href={`/${lang}/#top`} class="text-sm font-medium text-blue-100"
+      <a
+        href={`/${lang}/#top`}
+        class="hidden md:inline-block text-sm font-medium text-blue-100"
         >{dict.header.home}</a
       >
     </div>
@@ -108,30 +110,191 @@ const { lang, dict } = Astro.props;
       </div>
     </div>
 
-    <!-- Mobile menu (collapsible) -->
-    <div class="md:hidden w-full hidden" id="mobile-menu">
-      <div class="py-4 px-4 bg-[#00091d] text-blue-100 rounded-b-lg">
-        <a href={`/${lang}/#sobremi`} class="block py-2">{dict.header.about}</a>
-        <a href={`/${lang}/#experiencia`} class="block py-2"
-          >{dict.header.experience}</a
-        >
-        <a href={`/${lang}/#proyectos`} class="block py-2"
-          >{dict.header.projects}</a
-        >
-        <a href={`/${lang}/#contacto`} class="block py-2"
-          >{dict.header.contact}</a
-        >
-
-        <div class="mt-4">
-          <a href="/es/" class="block py-2">ES</a>
-          <a href="/en/" class="block py-2">EN</a>
-        </div>
-
-        <div class="mt-4">
-          <a href={`/${lang}/cv/`} class="block py-2">Ver CV</a>
-          <a href="/assets/cv.pdf" download class="block py-2">Descargar CV</a>
-        </div>
-      </div>
-    </div>
+    <!-- script moved below to avoid stacking context issues -->
   </nav>
 </header>
+
+<!-- Mobile backdrop (covers rest of screen) - moved outside header to avoid stacking context issues -->
+<div
+  id="mobile-backdrop"
+  class="hidden md:hidden"
+  style="position:fixed!important;inset:0;background:rgba(0,0,0,0.4);z-index:9980"
+>
+</div>
+
+<!-- Mobile menu (left panel, full viewport height, half width) - moved outside header -->
+<div
+  id="mobile-menu"
+  class="md:hidden hidden"
+  style="position:fixed!important;top:0;left:0;height:100vh!important;width:50vw!important;max-width:420px!important;z-index:9999;overflow:auto!important"
+>
+  <div
+    class="py-6 px-4"
+    style="height:100vh!important;background:#00091d;color:var(--tw-color-blue-100);box-shadow:0 10px 30px rgba(0,0,0,0.5);"
+  >
+    <a href={`/${lang}/#inicio`} class="block py-2">{dict.header.home}</a>
+    <!-- Close button top-right -->
+    <button
+      data-mobile-close
+      aria-label="Cerrar menú"
+      class="absolute top-3 right-3 inline-flex items-center justify-center p-2 rounded-md text-blue-100 bg-transparent hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-blue-300"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 6l8 8M6 14L14 6"></path>
+      </svg>
+    </button>
+    <a href={`/${lang}/#sobremi`} class="block py-2">{dict.header.about}</a>
+    <a href={`/${lang}/#experiencia`} class="block py-2"
+      >{dict.header.experience}</a
+    >
+    <a href={`/${lang}/#proyectos`} class="block py-2">{dict.header.projects}</a
+    >
+    <a href={`/${lang}/#contacto`} class="block py-2">{dict.header.contact}</a>
+
+    <div class="mt-4">
+      <button
+        type="button"
+        class="w-full flex items-center justify-between py-2 text-left"
+        data-mobile-toggle
+        aria-expanded="false"
+      >
+        <span>Idioma</span>
+        <svg
+          class="w-5 h-5 transform transition-transform"
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 8l4 4 4-4"></path></svg
+        >
+      </button>
+      <div class="hidden pl-4" data-mobile-panel>
+        <a href="/es/" class="block py-2">ES</a>
+        <a href="/en/" class="block py-2">EN</a>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <button
+        type="button"
+        class="w-full flex items-center justify-between py-2 text-left"
+        data-mobile-toggle
+        aria-expanded="false"
+      >
+        <span>CV</span>
+        <svg
+          class="w-5 h-5 transform transition-transform"
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 8l4 4 4-4"></path></svg
+        >
+      </button>
+      <div class="hidden pl-4" data-mobile-panel>
+        <a href={`/${lang}/cv/`} class="block py-2">Ver CV</a>
+        <a href="/assets/cv.pdf" download class="block py-2">Descargar CV</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Small script to toggle mobile submenus (works even if Flowbite JS isn't loaded) -->
+<script>
+  (function () {
+    if (typeof document === "undefined") return;
+    document.addEventListener("DOMContentLoaded", function () {
+      var buttons = document.querySelectorAll("[data-mobile-toggle]");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          var panel = btn.nextElementSibling;
+          if (!panel) return;
+          var expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          panel.classList.toggle("hidden");
+          // rotate chevron
+          var svg = btn.querySelector("svg");
+          if (svg) svg.style.transform = expanded ? "" : "rotate(180deg)";
+        });
+      });
+
+      // Fallback toggle for main mobile menu button when Flowbite JS isn't loaded
+      var collapseBtns = document.querySelectorAll("[data-collapse-toggle]");
+      var backdrop = document.getElementById("mobile-backdrop");
+      var mobileMenu = document.getElementById("mobile-menu");
+      function openMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove("hidden");
+        if (backdrop) backdrop.classList.remove("hidden");
+        document.documentElement.classList.add("overflow-hidden");
+        document.body.classList.add("overflow-hidden");
+        mobileMenu.setAttribute("tabindex", "-1");
+        mobileMenu.focus();
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.add("hidden");
+        if (backdrop) backdrop.classList.add("hidden");
+        document.documentElement.classList.remove("overflow-hidden");
+        document.body.classList.remove("overflow-hidden");
+        mobileMenu.removeAttribute("tabindex");
+      }
+
+      collapseBtns.forEach(function (cbtn) {
+        cbtn.addEventListener("click", function () {
+          var targetId =
+            cbtn.getAttribute("aria-controls") ||
+            cbtn.getAttribute("data-collapse-toggle");
+          if (!targetId) return;
+          var target = document.getElementById(targetId);
+          if (!target) return;
+          var isHidden = target.classList.contains("hidden");
+          // toggle
+          if (isHidden) openMobileMenu();
+          else closeMobileMenu();
+          cbtn.setAttribute("aria-expanded", String(!isHidden));
+        });
+      });
+
+      // Close buttons inside mobile menu (data-mobile-close)
+      var closeBtns = document.querySelectorAll("[data-mobile-close]");
+      closeBtns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          closeMobileMenu();
+        });
+      });
+
+      // Close on backdrop click
+      if (backdrop) {
+        backdrop.addEventListener("click", function () {
+          closeMobileMenu();
+        });
+      }
+
+      // Close on ESC
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeMobileMenu();
+      });
+    });
+  })();
+</script>
