@@ -1,19 +1,24 @@
 ---
-const { contact } = Astro.props as { contact: any };
+const { contact } = Astro.props as { contact: any[] };
 ---
 
 <div class="contacto-inline">
-  <span>{contact.github}</span>
-  <span> · </span>
-  <span>{contact.phone}</span>
-  <span> · </span>
-  <span>{contact.email}</span>
+  {
+    contact.map((item, idx) => (
+      <>
+        <a href={item.link} target="_blank" rel="noopener noreferrer">
+          {item.name}
+        </a>
+        {idx < contact.length - 1 && <span> · </span>}
+      </>
+    ))
+  }
 </div>
 
 <style>
   .contacto-inline {
     text-align: center;
-    font-size: 10pt;
+    font-size: 12pt;
     margin-bottom: 16pt;
   }
 </style>

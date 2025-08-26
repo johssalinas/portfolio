@@ -50,11 +50,24 @@
   },
   "cv": {
     "name": "Johs Salinas",
-    "contact": {
-      "github": "github.com/johssalinas",
-      "phone": "+57 3027374438",
-      "email": "johssalinas2work@gmail.com"
-    },
+    "contact": [
+      {
+        "name": "github/johssalinas",
+        "link": "https://github.com/johssalinas"
+      },
+      {
+        "name": "+57 3027374438",
+        "link": "https://wa.me/+573027374438?text=Hola%2C%20he%20visto%20tu%20curr%C3%ADculum%20y%20estoy%20interesado%20en%20tu%20perfil.%20Me%20gustar%C3%ADa%20contactarte%20para%20conversar%20sobre%20una%20posible%20oportunidad%20laboral.%20%C2%BFPodr%C3%ADamos%20coordinar%20una%20llamada%3F"
+      },
+      {
+        "name": "johssalinas2work@gmail.com",
+        "link": "mailto:johssalinas2work@gmail.com?subject=Consulta%20sobre%20curriculum&body=Hola,%20he%20visto%20tu%20curr%C3%ADculum%20y%20estoy%20interesado%20en%20tu%20perfil.%20Me%20gustar%C3%ADa%20contactarte%20para%20conversar%20sobre%20una%20posible%20oportunidad%20laboral.%20%C2%BFPodr%C3%ADamos%20coordinar%20una%20llamada%3F"
+      },
+      {
+        "name": "/in/johssalinas",
+        "link": "https://linkedin.com/in/johssalinas"
+      }
+    ],
     "summary": "QA Engineer con experiencia en el sector financiero y web, especializado en la validación de sistemas críticos y en asegurar la calidad de plataformas complejas. Experto en automatización de pruebas, CI/CD y testing de APIs REST.",
     "sections": {
       "experience": "Experiencia Laboral",
@@ -63,9 +76,9 @@
     "experiences": [
       {
         "company": "World Digital Solutions SAS",
-        "location": "Bucaramanga, Colombia [SectorBancario]",
+        "location": "Bucaramanga, Colombia [Sector Bancario]",
         "role": "QA Tester",
-        "dates": "Noviembre 2022 - Actualidad",
+        "dates": "Agosto 2022 - Julio 2025",
         "bullets": [
           "Validación de transacciones financieras bajo estándares JSON, incluyendo pruebas exhaustivas de APIs REST utilizando Postman para verificar códigos de estado, formatos de respuesta y casos edge.",
           "Implementación de pruebas de funcionalidades críticas como sistemas de pagos QR.",
@@ -80,7 +93,7 @@
         "company": "Colsapiens SAS",
         "location": "Bucaramanga, Colombia [Industria Alimentaria]",
         "role": "Analista QA",
-        "dates": "Enero 2022 - Noviembre 2022",
+        "dates": "Enero 2022 - Agosto 2022",
         "bullets": [
           "Diseño e implementación de estrategias de testing automatizado: unitarias, integración y E2E.",
           "Optimización de pipelines de CI/CD integrando múltiples tipos de pruebas automatizadas.",
@@ -88,6 +101,45 @@
         ],
         "specialties": "integración | unitarias | rendimiento | APIs | E2E",
         "skills": "Python | HTML | CSS | Jest | REST | JSON | JWT | MySQL | MongoDB"
+      },
+      {
+        "company": "Artistshot",
+        "location": "Remoto / Estados Unidos [E-Commerce]",
+        "role": "QA Engineer Freelance",
+        "dates": "Julio 2025 - Agosto 2025",
+        "bullets": [
+          "Diseñé e implementé una suite de automatización de pruebas para el proceso de compra, logrando reducir en un 70% el tiempo de validación manual y garantizando la fiabilidad de la plataforma.",
+          "Validé la funcionalidad de más de 10 métodos de pago (incluyendo Stripe, Square y PayPal), la lógica de códigos de descuento y el comportamiento del carrito de compras, incrementando la cobertura de pruebas en un 60%.",
+          "Ejecuté con éxito más de 500 casos de prueba, identificando y corrigiendo 12 errores críticos antes del despliegue, lo que disminuyó en un 90% los incidentes reportados por usuarios tras la publicación."
+        ],
+        "specialties": "automatización | pruebas funcionales | integración de pagos | e-commerce | regresión | APIs",
+        "skills": "JavaScript | Cypress | Playwright | REST | JSON | Stripe | Square | PayPal | Git | Linux"
+      },
+      {
+        "company": "Hacienda Aldemar",
+        "location": "Remoto / Colombia [Sector Agrícola]",
+        "role": "Desarrollador de Software Freelance",
+        "dates": "Febrero 2025 - Abril 2025",
+        "bullets": [
+          "Implementé un sistema de gestión de mantenimiento integral utilizando el ERP Odoo, reduciendo en un 50% los tiempos de respuesta ante incidencias en la hacienda.",
+          "Configuré funcionalidades clave para el control de ganado, el seguimiento de cultivos y la administración de nómina, aumentando la eficiencia administrativa en un 35%.",
+          "Integré módulos para la gestión de transporte y la demarcación de zonas, mejorando el control y la supervisión de las actividades agrícolas y disminuyendo en un 25% los costos logísticos."
+        ],
+        "specialties": "ERP | mantenimiento | gestión agrícola | transporte | nómina | optimización de procesos",
+        "skills": "Odoo | Python | PostgreSQL | Git | Linux | gestión de proyectos"
+      },
+      {
+        "company": "Flamingo",
+        "location": "Remoto / Colombia [Sector Alimentario]",
+        "role": "Desarrollador de Software Freelance",
+        "dates": "Noviembre 2024 - Febrero 2025",
+        "bullets": [
+          "Desarrollé un software personalizado para optimizar la gestión operativa de una distribuidora de alimentos, logrando reducir en un 40% el tiempo de procesamiento de pedidos.",
+          "Creé módulos para el registro de consumo de energía, el control de inventario, la administración de proveedores y la gestión de rutas de distribución, disminuyendo en un 30% los errores de inventario.",
+          "Facilité la toma de decisiones al integrar herramientas de control de gastos y gestión de plantilla, permitiendo un ahorro del 20% en costos operativos mensuales."
+        ],
+        "specialties": "desarrollo a medida | gestión operativa | inventarios | rutas | proveedores | control de gastos",
+        "skills": "Python | JavaScript | Odoo | MySQL | HTML | CSS | Git | Linux"
       }
     ],
     "education": [

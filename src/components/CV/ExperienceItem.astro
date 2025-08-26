@@ -7,12 +7,18 @@ const { item } = Astro.props as { item: any };
     <span>{item.company}</span>
     <span>{item.location}</span>
   </div>
-  <div class="experiencia-subtitle">{item.role} — {item.dates}</div>
-  <ul>
-    {item.bullets.map((b: string) => <li>{b}</li>)}
+  <div
+    class="experiencia-subtitle"
+    style="display: flex; justify-content: space-between;"
+  >
+    <span>{item.role}</span>
+    <span>{item.dates}</span>
+  </div>
+  <ul style="list-style-type: disc">
+    {item.bullets.map((b: string) => <li set:html={b} />)}
   </ul>
   <div class="especialidades">
-    <b>Especialidades en Testing:</b>
+    <b>Especialidades:</b>
     {item.specialties}
   </div>
   <div class="habilidades"><b>Habilidades:</b> {item.skills}</div>
@@ -25,11 +31,11 @@ const { item } = Astro.props as { item: any };
   .experiencia-header {
     display: flex;
     justify-content: space-between;
-    font-size: 11pt;
+    font-size: 13pt;
     font-weight: bold;
   }
   .experiencia-subtitle {
-    font-size: 11pt;
+    font-size: 12pt;
     font-style: italic;
     margin-bottom: 4pt;
   }
@@ -41,7 +47,6 @@ const { item } = Astro.props as { item: any };
   }
   .especialidades,
   .habilidades {
-    font-size: 10pt;
-    margin-bottom: 6pt;
+    font-size: 12pt;
   }
 </style>
