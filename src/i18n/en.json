@@ -75,6 +75,19 @@
     },
     "experiences": [
       {
+        "company": "Artistshot",
+        "location": "Remote / United States",
+        "role": "QA Engineer Freelance [E-Commerce]",
+        "dates": "July 2025 - August 2025",
+        "bullets": [
+          "Designed and implemented a test automation suite for the purchase process, reducing manual validation time by <b>70%</b> and ensuring platform reliability.",
+          "Validated the functionality of over <b>10 payment methods</b> (including Stripe, Square, and PayPal), discount code logic, and cart behavior, increasing test coverage by <b>60%</b>.",
+          "Successfully executed over <b>500 test cases</b>, identifying and fixing <b>12 critical bugs</b> before deployment, which reduced user-reported incidents by <b>90%</b> after release."
+        ],
+        "specialties": "automation | functional testing | payment integration | e-commerce | regression | APIs",
+        "skills": "JavaScript | Cypress | Playwright | REST | JSON | Stripe | Square | PayPal | Git | Linux"
+      },
+      {
         "company": "World Digital Solutions SAS",
         "location": "Bucaramanga, Colombia [Financial Sector]",
         "role": "QA Tester",
@@ -101,19 +114,6 @@
         ],
         "specialties": "integration | unit | performance | APIs | E2E",
         "skills": "Python | HTML | CSS | Jest | REST | JSON | JWT | MySQL | MongoDB"
-      },
-      {
-        "company": "Artistshot",
-        "location": "Remote / United States",
-        "role": "QA Engineer Freelance [E-Commerce]",
-        "dates": "July 2025 - August 2025",
-        "bullets": [
-          "Designed and implemented a test automation suite for the purchase process, reducing manual validation time by <b>70%</b> and ensuring platform reliability.",
-          "Validated the functionality of over <b>10 payment methods</b> (including Stripe, Square, and PayPal), discount code logic, and cart behavior, increasing test coverage by <b>60%</b>.",
-          "Successfully executed over <b>500 test cases</b>, identifying and fixing <b>12 critical bugs</b> before deployment, which reduced user-reported incidents by <b>90%</b> after release."
-        ],
-        "specialties": "automation | functional testing | payment integration | e-commerce | regression | APIs",
-        "skills": "JavaScript | Cypress | Playwright | REST | JSON | Stripe | Square | PayPal | Git | Linux"
       },
       {
         "company": "Hacienda Aldemar",

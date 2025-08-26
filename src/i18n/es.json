@@ -75,6 +75,19 @@
     },
     "experiences": [
       {
+        "company": "Artistshot",
+        "location": "Remoto / Estados Unidos [E-Commerce]",
+        "role": "QA Engineer Freelance",
+        "dates": "Julio 2025 - Agosto 2025",
+        "bullets": [
+          "Diseñé e implementé una suite de automatización de pruebas para el proceso de compra, logrando reducir en un 70% el tiempo de validación manual y garantizando la fiabilidad de la plataforma.",
+          "Validé la funcionalidad de más de 10 métodos de pago (incluyendo Stripe, Square y PayPal), la lógica de códigos de descuento y el comportamiento del carrito de compras, incrementando la cobertura de pruebas en un 60%.",
+          "Ejecuté con éxito más de 500 casos de prueba, identificando y corrigiendo 12 errores críticos antes del despliegue, lo que disminuyó en un 90% los incidentes reportados por usuarios tras la publicación."
+        ],
+        "specialties": "automatización | pruebas funcionales | integración de pagos | e-commerce | regresión | APIs",
+        "skills": "JavaScript | Cypress | Playwright | REST | JSON | Stripe | Square | PayPal | Git | Linux"
+      },
+      {
         "company": "World Digital Solutions SAS",
         "location": "Bucaramanga, Colombia [Sector Bancario]",
         "role": "QA Tester",
@@ -101,19 +114,6 @@
         ],
         "specialties": "integración | unitarias | rendimiento | APIs | E2E",
         "skills": "Python | HTML | CSS | Jest | REST | JSON | JWT | MySQL | MongoDB"
-      },
-      {
-        "company": "Artistshot",
-        "location": "Remoto / Estados Unidos [E-Commerce]",
-        "role": "QA Engineer Freelance",
-        "dates": "Julio 2025 - Agosto 2025",
-        "bullets": [
-          "Diseñé e implementé una suite de automatización de pruebas para el proceso de compra, logrando reducir en un 70% el tiempo de validación manual y garantizando la fiabilidad de la plataforma.",
-          "Validé la funcionalidad de más de 10 métodos de pago (incluyendo Stripe, Square y PayPal), la lógica de códigos de descuento y el comportamiento del carrito de compras, incrementando la cobertura de pruebas en un 60%.",
-          "Ejecuté con éxito más de 500 casos de prueba, identificando y corrigiendo 12 errores críticos antes del despliegue, lo que disminuyó en un 90% los incidentes reportados por usuarios tras la publicación."
-        ],
-        "specialties": "automatización | pruebas funcionales | integración de pagos | e-commerce | regresión | APIs",
-        "skills": "JavaScript | Cypress | Playwright | REST | JSON | Stripe | Square | PayPal | Git | Linux"
       },
       {
         "company": "Hacienda Aldemar",

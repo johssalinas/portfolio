@@ -1,3 +1,20 @@
+@media print {
+  header,
+  footer,
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  .cv-container {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    padding: 0.5cm !important;
+    margin: 0 !important;
+  }
+}
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
