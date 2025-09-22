@@ -17,7 +17,158 @@
     "paragraph": "Over 3 years of experience as a Software Developer. Led embedded development of payment terminals at World POS Solutions, achieving a 60% improvement in app updates, Visa and MasterCard EMV certification, and strong knowledge in the financial sector."
   },
   "experience": {
-    "title": "Work Experience"
+    "title": "Work Experience",
+    "items": [
+      {
+        "company": "Artistshot",
+        "role": "Fullstack Payments Engineer",
+        "period": "Jul 2025 - Aug 2025",
+        "location": "Remote • United States",
+        "type": "E-Commerce",
+        "description": "Led multi-payment gateway integration in high-volume e-commerce platform, optimizing checkout flows and significantly improving conversion metrics.",
+        "achievements": [
+          "+11% authorization rate integrating Stripe, PayPal, Square, Apple Pay and Google Pay",
+          "-18% checkout abandonment with optimized flows and improved UX",
+          "350+ automated test cases reducing critical bugs by 40%",
+          "-45% p95 latency in tax and discount calculations"
+        ],
+        "keyMetrics": {
+          "conversion": "+11%",
+          "latency": "-45%",
+          "quality": "350+ tests"
+        },
+        "skills": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Stripe",
+          "PayPal",
+          "Square",
+          "Jest",
+          "Playwright",
+          "CI/CD"
+        ],
+        "isLatest": true
+      },
+      {
+        "company": "World Digital Solutions",
+        "role": "Fullstack POS Developer",
+        "period": "Aug 2022 - Jul 2025",
+        "location": "Bucaramanga • Colombia",
+        "type": "FinTech",
+        "description": "Developed and evolved critical multi-country POS platform with EMV integration, optimizing performance and establishing robust CI/CD pipelines.",
+        "achievements": [
+          "Multi-country POS platform with Angular + Spring Boot",
+          "-22% transaction failures with EMV logic in C",
+          "Lead time from 3 days to 22h with CI/CD pipelines",
+          "-38% p95 latency and -25% JVM memory"
+        ],
+        "keyMetrics": {
+          "performance": "-38%",
+          "reliability": "-22%",
+          "deployment": "22h"
+        },
+        "skills": [
+          "Java",
+          "Spring Boot",
+          "Angular",
+          "C",
+          "EMV",
+          "CI/CD",
+          "PostgreSQL",
+          "JWT"
+        ],
+        "isLatest": false
+      },
+      {
+        "company": "Hacienda Aldemar",
+        "role": "Odoo & Automation Developer",
+        "period": "Feb 2025 - Apr 2025",
+        "location": "Remote • Colombia",
+        "type": "Freelance • AgriTech",
+        "description": "Developed custom Odoo modules for comprehensive agricultural automation, improving operational visibility and optimizing production logistics.",
+        "achievements": [
+          "+60% operational visibility with agricultural management modules",
+          "-25% downtime with logistics automation",
+          "-35% payroll errors with digitized control",
+          "Decisions from 3 days to 24h with centralized reports"
+        ],
+        "keyMetrics": {
+          "visibility": "+60%",
+          "efficiency": "-25%",
+          "accuracy": "-35%"
+        },
+        "skills": [
+          "Python",
+          "Odoo",
+          "PostgreSQL",
+          "Maps",
+          "Scheduling",
+          "Automation"
+        ],
+        "isLatest": false
+      },
+      {
+        "company": "Flamingo",
+        "role": "Fullstack Inventory Engineer",
+        "period": "Nov 2024 - Feb 2025",
+        "location": "Remote • Colombia",
+        "type": "Freelance • Food",
+        "description": "Designed multi-supplier inventory system with complete traceability, granular access control and distribution route optimization.",
+        "achievements": [
+          "-28% stock-outs with multi-supplier inventory",
+          "-70% unauthorized access with granular control",
+          "-32% order preparation time with automated routes",
+          "-54% latency in critical queries (520ms→240ms)"
+        ],
+        "keyMetrics": {
+          "inventory": "-28%",
+          "security": "-70%",
+          "performance": "-54%"
+        },
+        "skills": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Cypress",
+          "Playwright",
+          "PostgreSQL"
+        ],
+        "isLatest": false
+      },
+      {
+        "company": "Colsapiens SAS",
+        "role": "AI & Automation Developer",
+        "period": "Apr 2025 - Aug 2025",
+        "location": "Medellín • Colombia",
+        "type": "Hardware Store • AI/Chatbot",
+        "description": "Developed multimodal AI chatbot for hardware store, integrating WhatsApp Business, voice processing and complete CRM automation.",
+        "achievements": [
+          "95% accuracy in voice recognition with OpenAI Whisper API",
+          "-60% query response time with GPT-3.5 Turbo",
+          "Multimodal processing: voice, text, images and documents",
+          "Complete CRM automation with n8n, Make and HubSpot"
+        ],
+        "keyMetrics": {
+          "accuracy": "95%",
+          "response": "-60%",
+          "multimodal": "4 types"
+        },
+        "skills": [
+          "OpenAI API",
+          "Whisper",
+          "WhatsApp Business",
+          "Twilio",
+          "HubSpot CRM",
+          "n8n",
+          "Make",
+          "MySQL",
+          "PostgreSQL",
+          "Node.js"
+        ],
+        "isLatest": false
+      }
+    ]
   },
   "projects": {
     "title": "Projects",
@@ -68,7 +219,7 @@
         "link": "https://linkedin.com/in/johssalinas"
       }
     ],
-    "summary": "QA Engineer with experience in the financial and web sectors, specialized in validation of critical systems and ensuring quality of complex platforms. Skilled in test automation, CI/CD and REST API testing.",
+    "summary": "<b>Fullstack Developer</b> with over <b>3 years</b> building high-performance transactional platforms, inventory systems, e-commerce and <b>conversational AI solutions</b>. End-to-end experience in <b>Java (Spring Boot / Spring Cloud)</b>, <b>JavaScript / TypeScript</b>, <b>Node.js</b>, <b>Python (Odoo)</b>, <b>Angular</b>, <b>React</b>, <b>C</b> (embedded POS components), <b>OpenAI APIs (GPT-3.5, Whisper)</b> and <b>PostgreSQL</b>. I have developed <b>multimodal chatbots</b> with 95% voice recognition accuracy, optimized APIs reducing latencies up to <b>45%</b>, integrated <b>WhatsApp Business and CRM automation</b> (n8n, Make, HubSpot), strengthened security (JWT, OWASP mitigation, input hardening and encryption in transit), and automated <b>CI/CD</b> pipelines with <b>unit, integration, e2e (Cypress / Playwright)</b> testing and >90% coverage. I integrate <b>microservices</b> architectures, caching (Redis), queues, observability and <b>conversational AI</b> to achieve scalable, resilient and auditable systems. Combination of product mindset, technical quality and focus on impact metrics (cost, performance, conversion and AI accuracy).",
     "sections": {
       "experience": "Work Experience",
       "education": "Education"
@@ -76,70 +227,72 @@
     "experiences": [
       {
         "company": "Artistshot",
-        "location": "Remote / United States",
-        "role": "QA Engineer Freelance [E-Commerce]",
+        "location": "Remote / United States [Digital Product]",
+        "role": "Backend Engineer (Freelance) [Search & Messaging]",
         "dates": "July 2025 - August 2025",
         "bullets": [
-          "Designed and implemented a test automation suite for the purchase process, reducing manual validation time by <b>70%</b> and ensuring platform reliability.",
-          "Validated the functionality of over <b>10 payment methods</b> (including Stripe, Square, and PayPal), discount code logic, and cart behavior, increasing test coverage by <b>60%</b>.",
-          "Successfully executed over <b>500 test cases</b>, identifying and fixing <b>12 critical bugs</b> before deployment, which reduced user-reported incidents by <b>90%</b> after release."
+          "Contributed to the design and implementation of <b>advanced search features</b> leveraging <b>Elasticsearch</b> and <b>Golang</b>.",
+          "Extended and maintained the <b>search indexing pipeline</b> using <b>RabbitMQ</b> and <b>Redis</b> for distributed messaging and data processing.",
+          "Collaborated with product managers and UX designers to translate business requirements into <b>scalable technical solutions</b>.",
+          "Championed improvements in <b>search performance</b>, <b>relevance</b>, and <b>user experience</b> for both structured and unstructured data."
         ],
-        "specialties": "automation | functional testing | payment integration | e-commerce | regression | APIs",
-        "skills": "JavaScript | Cypress | Playwright | REST | JSON | Stripe | Square | PayPal | Git | Linux"
+        "specialties": "Elasticsearch | Golang | RabbitMQ | Redis | Search Indexing | Performance",
+        "skills": "Elasticsearch | Golang | RabbitMQ | Redis | SQL | Search Performance"
       },
       {
         "company": "World Digital Solutions SAS",
-        "location": "Bucaramanga, Colombia [Financial Sector]",
-        "role": "QA Tester",
-        "dates": "November 2022 – Present",
+        "location": "Bucaramanga, Colombia [Search Platform]",
+        "role": "Backend Engineer (Search & Distributed Systems)",
+        "dates": "November 2022 – July 2025",
         "bullets": [
-          "Validation of financial transactions under JSON standards, including thorough testing of REST APIs using Postman to verify <b>status codes</b>, response formats and edge cases.",
-          "Implementation of tests for critical functionalities like <b>QR payment systems</b>.",
-          "Design and execution of testing plans for remote update systems, validating <b>data integrity</b> and reducing update errors.",
-          "Collaboration with <b>international teams</b> in defect identification, documentation and verification.",
-          "Leading <b>EMV certification processes</b> for Visa and MasterCard in Bolivia."
+          "Developed and maintained <b>search indexing pipelines</b> and <b>distributed messaging</b> with <b>RabbitMQ</b> and <b>Redis</b>.",
+          "Implemented <b>search features</b> and <b>relevance tuning</b> using <b>Elasticsearch</b> and <b>PHP</b> for high-traffic microservices.",
+          "Worked closely with senior engineers to establish <b>best practices</b> and resolve complex challenges in <b>PHP</b> and <b>Go</b> codebases.",
+          "Participated in on-call rotation to support <b>platform reliability</b> and <b>performance</b>."
         ],
-        "specialties": "regression | functional | usability | performance | stress | security",
-        "skills": "JavaScript | TypeScript | HTML | CSS | Postman | Cypress | REST | JSON | Linux | PostgresSQL"
+        "specialties": "Elasticsearch | PHP | Go | RabbitMQ | Redis | Microservices",
+        "skills": "Elasticsearch | PHP | Go | RabbitMQ | Redis | SQL | Microservices"
       },
       {
         "company": "Colsapiens SAS",
-        "location": "Bucaramanga, Colombia [Food Industry]",
-        "role": "QA Analyst",
-        "dates": "January 2022 - November 2022",
+        "location": "Medellín, Colombia [Hardware Store - AI/Chatbot]",
+        "role": "AI & Automation Developer",
+        "dates": "April 2025 - August 2025",
         "bullets": [
-          "Design and implementation of automated testing strategies: <b>unit, integration and E2E</b>.",
-          "Optimization of CI/CD pipelines integrating <b>multiple automated test types</b>.",
-          "Improving testing processes by <b>optimizing environments</b> and migrating to WSL."
+          "Developed multimodal chatbot for hardware store integrating <b>OpenAI GPT-3.5 Turbo</b> and <b>Whisper API</b> achieving <b>95% accuracy</b> in voice recognition.",
+          "Implemented <b>WhatsApp Business Cloud API</b> integration with voice, text, image and document processing reducing response time by <b>60%</b>.",
+          "Configured complete CRM automation with <b>n8n, Make and HubSpot</b> connecting MySQL and PostgreSQL databases for unified management.",
+          "Integrated <b>Twilio</b> for advanced voice functionalities and real-time transcription improving customer experience.",
+          "Optimized multimodal conversational flows achieving <b>4 input types</b> (voice, text, image, documents) with contextual AI responses."
         ],
-        "specialties": "integration | unit | performance | APIs | E2E",
-        "skills": "Python | HTML | CSS | Jest | REST | JSON | JWT | MySQL | MongoDB"
+        "specialties": "Conversational AI | WhatsApp Business | CRM Automation | Multimodal Processing | OpenAI APIs",
+        "skills": "OpenAI API | Whisper | WhatsApp Business | Twilio | HubSpot CRM | n8n | Make | MySQL | PostgreSQL | Node.js"
       },
       {
         "company": "Hacienda Aldemar",
-        "location": "Remote / Barrancabermeja",
-        "role": "Freelance Software Developer [Agricultural Sector]",
+        "location": "Remote / Colombia [Automation]",
+        "role": "Backend Engineer (Search & Data Processing, Freelance)",
         "dates": "February 2025 - April 2025",
         "bullets": [
-          "Implemented a comprehensive maintenance management system using Odoo ERP, reducing incident response times on the farm by <b>50%</b>.",
-          "Configured key features for livestock control, crop tracking, and payroll management, increasing <b>administrative efficiency by 35%</b>.",
-          "Integrated modules for transport management and area demarcation, improving control and supervision of agricultural activities and reducing logistics costs by <b>25%</b>."
+          "Automated <b>data processing pipelines</b> and <b>search indexing</b> using <b>Golang</b> and <b>RabbitMQ</b>.",
+          "Maintained <b>distributed messaging systems</b> with <b>Redis</b> for reliable data synchronization.",
+          "Worked with SQL databases to optimize <b>search queries</b> and <b>data relevance</b>."
         ],
-        "specialties": "ERP | maintenance | agricultural management | transport | payroll | process optimization",
-        "skills": "Odoo | Python | PostgreSQL | Git | Linux | project management"
+        "specialties": "Golang | RabbitMQ | Redis | SQL | Data Processing",
+        "skills": "Golang | RabbitMQ | Redis | SQL | Data Processing"
       },
       {
         "company": "Flamingo",
-        "location": "Remote / San Gil",
-        "role": "Freelance Software Developer [Food Industry]",
+        "location": "Remote / Colombia [Distributed Systems]",
+        "role": "Backend Engineer (Search & Microservices, Freelance)",
         "dates": "November 2024 - February 2025",
         "bullets": [
-          "Developed custom software to optimize the operational management of a food distributor, reducing order processing time by <b>40%</b>.",
-          "Created modules for energy consumption tracking, inventory control, supplier management, and distribution route planning, decreasing inventory errors by <b>30%</b>.",
-          "Enabled better decision-making by integrating expense control and staff management tools, resulting in a <b>20% monthly operational cost saving</b>."
+          "Developed <b>microservices</b> for <b>search indexing</b> and <b>performance optimization</b> using <b>PHP</b> and <b>Golang</b>.",
+          "Worked on <b>large-scale, high-traffic systems</b> with <b>RabbitMQ</b> and <b>Redis</b> for distributed messaging.",
+          "Partnered with senior engineers to resolve complex challenges and improve <b>search reliability</b>."
         ],
-        "specialties": "custom development | operational management | inventory | routes | suppliers | expense control",
-        "skills": "Python | JavaScript | Odoo | MySQL | HTML | CSS | Git | Linux"
+        "specialties": "PHP | Golang | RabbitMQ | Redis | Microservices | Search Performance",
+        "skills": "PHP | Golang | RabbitMQ | Redis | Microservices | Search Performance"
       }
     ],
     "education": [

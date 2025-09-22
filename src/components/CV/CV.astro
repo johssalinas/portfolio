@@ -11,7 +11,7 @@ const dict = getDict(lang as Lang).cv as any;
 <div class="cv-container">
   <h1>{dict.name}</h1>
   <Contact contact={dict.contact} />
-  <div class="resumen">{dict.summary}</div>
+  <div class="resumen" set:html={dict.summary} />
 
   <div class="section-title">{dict.sections.experience}</div>
   {dict.experiences.map((item: any) => <ExperienceItem item={item} />)}

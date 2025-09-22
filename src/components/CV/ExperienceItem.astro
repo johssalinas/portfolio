@@ -18,10 +18,10 @@ const { item } = Astro.props as { item: any };
     {item.bullets.map((b: string) => <li set:html={b} />)}
   </ul>
   <div class="especialidades">
-    <b>Especialidades:</b>
+    <b>Specialties:</b>
     {item.specialties}
   </div>
-  <div class="habilidades"><b>Habilidades:</b> {item.skills}</div>
+  <div class="habilidades"><b>Skills:</b> {item.skills}</div>
 </div>
 
 <style>

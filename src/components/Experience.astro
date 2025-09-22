@@ -1,37 +1,45 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 
+interface ExperienceData {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  keyMetrics: {
+    [key: string]: string;
+  };
+  skills: string[];
+  isLatest?: boolean;
+}
+
 interface Props {
   dict: any;
 }
 const { dict } = Astro.props;
 
-const EXPERIENCE = [
-  {
-    title: dict.experience?.item1_title || "Flowbite Figma v1.3.0",
-    date: dict.experience?.item1_date || "Released on December 7th, 2021",
-    description:
-      dict.experience?.item1_desc ||
-      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    link: "#",
-    isLatest: true,
-  },
-  {
-    title: dict.experience?.item2_title || "Flowbite Library v1.2.2",
-    date: dict.experience?.item2_date || "Released on December 2nd, 2021",
-    description:
-      dict.experience?.item2_desc ||
-      "Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
-  },
-];
+const EXPERIENCE: ExperienceData[] = dict.experience?.items || [];
 ---
 
-<ol class="relative border-s border-gray-200 ms-4 space-y-6 sm:space-y-8">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="mb-6 sm:mb-10 ms-6 sm:ms-8">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
-</ol>
+<section class="max-w-4xl mx-auto">
+  <div class="relative">
+    <!-- Timeline line -->
+    <div
+      class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600"
+    >
+    </div>
+
+    <ol class="relative space-y-8 ml-8">
+      {
+        EXPERIENCE.map((experience: ExperienceData) => (
+          <li class="relative">
+            <ExperienceItem {...experience} />
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
