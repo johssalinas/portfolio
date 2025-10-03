@@ -109,8 +109,18 @@ const { lang, dict } = Astro.props;
               class="py-1 text-sm text-blue-100"
               aria-labelledby="lang-dropdown-button"
             >
-              <li><a href="/es/" class="block px-4 py-2">ES</a></li>
-              <li><a href="/en/" class="block px-4 py-2">EN</a></li>
+              <li>
+                <a
+                  href="#"
+                  data-lang="es"
+                  class="block px-4 py-2 hover:bg-blue-800">ES</a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  data-lang="en"
+                  class="block px-4 py-2 hover:bg-blue-800">EN</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -191,8 +201,8 @@ const { lang, dict } = Astro.props;
         >
       </button>
       <div class="hidden pl-4" data-mobile-panel>
-        <a href="/es/" class="block py-2">ES</a>
-        <a href="/en/" class="block py-2">EN</a>
+        <a href="#" data-lang="es" class="block py-2">ES</a>
+        <a href="#" data-lang="en" class="block py-2">EN</a>
       </div>
     </div>
 
@@ -306,6 +316,45 @@ const { lang, dict } = Astro.props;
       });
     });
   })();
+
+  // Script para manejar el cambio de idioma preservando la ruta actual
+  document.addEventListener("DOMContentLoaded", function () {
+    const langLinks = document.querySelectorAll("[data-lang]");
+
+    langLinks.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const newLang = link.getAttribute("data-lang");
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+
+        // Determinar el idioma actual basado en la ruta
+        const currentLang = currentPath.includes("/en/") ? "en" : "es";
+
+        // Si ya estamos en ese idioma, no hacer nada
+        if (currentLang === newLang) {
+          return;
+        }
+
+        // Construir la nueva URL
+        let newPath;
+
+        if (currentPath === "/" || currentPath === "") {
+          // Si estamos en la raíz, ir a la página principal del nuevo idioma
+          newPath = `/${newLang}/`;
+        } else if (currentPath.includes("/cv")) {
+          // Si estamos en CV, mantener la ruta de CV
+          newPath = `/${newLang}/cv/`;
+        } else {
+          // Para otras rutas, reemplazar el idioma en la ruta
+          newPath = currentPath.replace(`/${currentLang}/`, `/${newLang}/`);
+        }
+
+        // Navegar a la nueva URL preservando el hash (sección)
+        window.location.href = newPath + currentHash;
+      });
+    });
+  });
 
   // Script para manejar la descarga/impresión del CV
   document.addEventListener("DOMContentLoaded", function () {
