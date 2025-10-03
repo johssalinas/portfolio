@@ -298,4 +298,28 @@ const { lang, dict } = Astro.props;
       });
     });
   })();
+
+  // Script para manejar la descarga/impresión del CV
+  document.addEventListener("DOMContentLoaded", function () {
+    const printCvLinks = document.querySelectorAll("[data-print-cv]");
+
+    printCvLinks.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const cvUrl = link.getAttribute("href");
+
+        // Abrir CV en nueva ventana
+        const cvWindow = window.open(cvUrl, "_blank");
+
+        // Cuando la página del CV cargue, activar impresión
+        if (cvWindow) {
+          cvWindow.addEventListener("load", function () {
+            setTimeout(function () {
+              cvWindow.print();
+            }, 250);
+          });
+        }
+      });
+    });
+  });
 </script>
