@@ -5,7 +5,9 @@
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
-    "lang": "EN"
+    "lang": "EN",
+    "view_cv": "View CV",
+    "download_cv": "Download CV"
   },
   "footer": {
     "about": "About Me",

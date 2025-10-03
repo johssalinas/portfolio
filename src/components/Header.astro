@@ -74,11 +74,17 @@ const { lang, dict } = Astro.props;
               aria-labelledby="cv-dropdown-button"
             >
               <li>
-                <a href={`/${lang}/cv/`} class="block px-4 py-2">Ver CV</a>
+                <a
+                  href={`/${lang}/cv/`}
+                  class="block px-4 py-2 hover:bg-blue-800"
+                  >{dict.header.view_cv}</a
+                >
               </li>
               <li>
-                <a href="/assets/cv.pdf" download class="block px-4 py-2"
-                  >Descargar CV</a
+                <a
+                  href={`/${lang}/cv/`}
+                  class="block px-4 py-2 hover:bg-blue-800"
+                  data-print-cv>{dict.header.download_cv}</a
                 >
               </li>
             </ul>
@@ -212,8 +218,10 @@ const { lang, dict } = Astro.props;
         >
       </button>
       <div class="hidden pl-4" data-mobile-panel>
-        <a href={`/${lang}/cv/`} class="block py-2">Ver CV</a>
-        <a href="/assets/cv.pdf" download class="block py-2">Descargar CV</a>
+        <a href={`/${lang}/cv/`} class="block py-2">{dict.header.view_cv}</a>
+        <a href={`/${lang}/cv/`} class="block py-2" data-print-cv
+          >{dict.header.download_cv}</a
+        >
       </div>
     </div>
   </div>

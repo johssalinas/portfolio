@@ -22,7 +22,8 @@ const dict = getDict(lang as Lang).cv as any;
 
 <style>
   .cv-container {
-    max-width: 800px;
+    width: 800px;
+    min-width: 800px;
     background: #fff;
     padding: 2cm;
     margin: 20px auto;
@@ -51,8 +52,10 @@ const dict = getDict(lang as Lang).cv as any;
   @media print {
     .cv-container {
       box-shadow: none;
-      max-width: 100%;
+      width: 100%;
+      min-width: auto;
       padding: 1cm;
+      margin: 0;
     }
   }
 </style>
