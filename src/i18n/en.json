@@ -187,6 +187,7 @@
       "subject": "Subject",
       "message": "Message",
       "send": "Send message",
+      "sending": "Sending...",
       "placeholder_name": "Your name",
       "placeholder_email": "youremail@email.com",
       "placeholder_message": "Write your message...",
@@ -194,7 +195,9 @@
       "option_collab": "Collaboration",
       "option_greet": "Just say hi",
       "option_other": "Other",
-      "select_subject": "Select a subject"
+      "select_subject": "Select a subject",
+      "success_message": "✅ Message sent successfully! I'll reply soon.",
+      "error_message": "❌ There was an error. Please try again."
     },
     "location": "Location:",
     "location_city": "Bucaramanga, Colombia",

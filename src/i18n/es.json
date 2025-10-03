@@ -186,6 +186,7 @@
       "subject": "Asunto",
       "message": "Mensaje",
       "send": "Enviar mensaje",
+      "sending": "Enviando...",
       "placeholder_name": "Tu nombre",
       "placeholder_email": "tucorreo@email.com",
       "placeholder_message": "Escribe tu mensaje...",
@@ -193,7 +194,9 @@
       "option_collab": "Colaboración",
       "option_greet": "Solo saludar",
       "option_other": "Otro",
-      "select_subject": "Selecciona un asunto"
+      "select_subject": "Selecciona un asunto",
+      "success_message": "✅ ¡Mensaje enviado exitosamente! Te responderé pronto.",
+      "error_message": "❌ Hubo un error. Por favor, intenta nuevamente."
     },
     "location": "Ubicación:",
     "location_city": "Bucaramanga, Colombia",
