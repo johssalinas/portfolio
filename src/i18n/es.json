@@ -14,10 +14,13 @@
   },
   "about": {
     "available": "Disponible para trabajar",
-    "paragraph": "Más de 3 años de experiencia como Desarrollador de Software. Lideré el desarrollo Embebido de terminales de pago en World POS Solutions, logrando un 60% de mejora en la actualización de aplicaciones, certificación de las marcas Visa y MasterCard con EMV y gran conocimiento en el sector financiero."
+    "paragraph": "Más de 3 años de experiencia como Desarrollador Fullstack. He trabajado en pagos e-commerce, plataformas POS multi-país con certificación EMV, chatbots IA multimodal, automatización agrícola con Odoo e inventario multi-proveedor. Especializado en optimización de APIs, CI/CD, seguridad (JWT, OWASP) y QA automatizada."
   },
   "experience": {
     "title": "Experiencia Laboral",
+    "currentLabel": "Actual",
+    "achievementsLabel": "Logros Clave:",
+    "technologiesLabel": "Tecnologías:",
     "items": [
       {
         "company": "Artistshot",

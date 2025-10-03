@@ -12,6 +12,7 @@ interface Props {
   };
   skills: string[];
   isLatest?: boolean;
+  dict?: any;
 }
 
 const {
@@ -25,7 +26,14 @@ const {
   keyMetrics,
   skills,
   isLatest,
+  dict,
 } = Astro.props;
+
+// Textos traducibles con fallbacks
+const currentLabel = dict?.experience?.currentLabel || "Actual";
+const achievementsLabel =
+  dict?.experience?.achievementsLabel || "Logros Clave:";
+const technologiesLabel = dict?.experience?.technologiesLabel || "Tecnologías:";
 ---
 
 <div
@@ -49,7 +57,7 @@ const {
         {
           isLatest && (
             <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-medium px-2 py-1 rounded-full">
-              Actual
+              {currentLabel}
             </span>
           )
         }
@@ -108,7 +116,7 @@ const {
 
   <!-- Achievements -->
   <div class="mb-4">
-    <h4 class="text-sm font-semibold text-sky-300 mb-2">Logros Clave:</h4>
+    <h4 class="text-sm font-semibold text-sky-300 mb-2">{achievementsLabel}</h4>
     <ul class="space-y-2">
       {
         achievements.map((achievement) => (
@@ -123,7 +131,7 @@ const {
 
   <!-- Skills -->
   <div>
-    <h4 class="text-sm font-semibold text-sky-300 mb-2">Tecnologías:</h4>
+    <h4 class="text-sm font-semibold text-sky-300 mb-2">{technologiesLabel}</h4>
     <div class="flex flex-wrap gap-2">
       {
         skills.map((skill) => (

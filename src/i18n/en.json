@@ -14,10 +14,13 @@
   },
   "about": {
     "available": "Available for work",
-    "paragraph": "Over 3 years of experience as a Software Developer. Led embedded development of payment terminals at World POS Solutions, achieving a 60% improvement in app updates, Visa and MasterCard EMV certification, and strong knowledge in the financial sector."
+    "paragraph": "Over 3 years of experience as a Fullstack Developer. I've worked on e-commerce payments, multi-country POS platforms with EMV certification, multimodal AI chatbots, agricultural automation with Odoo and multi-supplier inventory. Specialized in API optimization, CI/CD, security (JWT, OWASP) and automated QA."
   },
   "experience": {
     "title": "Work Experience",
+    "currentLabel": "Current",
+    "achievementsLabel": "Key Achievements:",
+    "technologiesLabel": "Technologies:",
     "items": [
       {
         "company": "Artistshot",
@@ -219,7 +222,7 @@
         "link": "https://linkedin.com/in/johssalinas"
       }
     ],
-    "summary": "<b>Fullstack Developer</b> with over <b>3 years</b> building high-performance transactional platforms, inventory systems, e-commerce and <b>conversational AI solutions</b>. End-to-end experience in <b>Java (Spring Boot / Spring Cloud)</b>, <b>JavaScript / TypeScript</b>, <b>Node.js</b>, <b>Python (Odoo)</b>, <b>Angular</b>, <b>React</b>, <b>C</b> (embedded POS components), <b>OpenAI APIs (GPT-3.5, Whisper)</b> and <b>PostgreSQL</b>. I have developed <b>multimodal chatbots</b> with 95% voice recognition accuracy, optimized APIs reducing latencies up to <b>45%</b>, integrated <b>WhatsApp Business and CRM automation</b> (n8n, Make, HubSpot), strengthened security (JWT, OWASP mitigation, input hardening and encryption in transit), and automated <b>CI/CD</b> pipelines with <b>unit, integration, e2e (Cypress / Playwright)</b> testing and >90% coverage. I integrate <b>microservices</b> architectures, caching (Redis), queues, observability and <b>conversational AI</b> to achieve scalable, resilient and auditable systems. Combination of product mindset, technical quality and focus on impact metrics (cost, performance, conversion and AI accuracy).",
+    "summary": "<b>Fullstack Developer</b> with over <b>3 years</b> building high-performance transactional platforms, inventory systems, e-commerce and <b>conversational AI solutions</b>. End-to-end experience in <b>Java (Spring Boot / Spring Cloud)</b>, <b>JavaScript / TypeScript</b>, <b>Node.js</b>, <b>Python (Odoo)</b>, <b>Angular</b>, <b>React</b>, <b>C</b> (embedded POS components), <b>OpenAI APIs (GPT-4.5, Whisper)</b> and <b>PostgreSQL</b>. I have developed <b>multimodal chatbots</b> with 95% voice recognition accuracy, optimized APIs reducing latencies up to <b>45%</b>, integrated <b>WhatsApp Business and CRM automation</b> (n8n, Make, HubSpot), strengthened security (JWT, OWASP mitigation, input hardening and encryption in transit), and automated <b>CI/CD</b> pipelines with <b>unit, integration, e2e (Cypress / Playwright)</b> testing and >90% coverage. I integrate <b>microservices</b> architectures, caching (Redis), queues, observability and <b>conversational AI</b> to achieve scalable, resilient and auditable systems. Combination of product mindset, technical quality and focus on impact metrics (cost, performance, conversion and AI accuracy).",
     "sections": {
       "experience": "Work Experience",
       "education": "Education"
@@ -227,74 +230,88 @@
     "experiences": [
       {
         "company": "Artistshot",
-        "location": "Remote / United States [Digital Product]",
-        "role": "Backend Engineer (Freelance) [Search & Messaging]",
+        "location": "Remote / United States [E-Commerce]",
+        "role": "Fullstack Payments Engineer",
         "dates": "July 2025 - August 2025",
         "bullets": [
-          "Contributed to the design and implementation of <b>advanced search features</b> leveraging <b>Elasticsearch</b> and <b>Golang</b>.",
-          "Extended and maintained the <b>search indexing pipeline</b> using <b>RabbitMQ</b> and <b>Redis</b> for distributed messaging and data processing.",
-          "Collaborated with product managers and UX designers to translate business requirements into <b>scalable technical solutions</b>.",
-          "Championed improvements in <b>search performance</b>, <b>relevance</b>, and <b>user experience</b> for both structured and unstructured data."
+          "Implemented payment gateways <b>Stripe, PayPal, Square, Apple Pay and Google Pay</b> plus credit/debit cards and coupons, increasing authorization rate by <b>+11%</b> and reducing checkout abandonment by <b>18%</b>.",
+          "Orchestrated idempotent payment flow and retries (secure webhooks, fraud validation and method normalization), decreasing reconciliation incidents by <b>35%</b>.",
+          "Designed suite of <b>350+ test cases</b> (unit, integration, e2e, load, security: SQL/XSS) executed via <b>GitLab CI/CD</b>, lowering critical post-deploy bugs by <b>40%</b>.",
+          "Optimized tax, discount and gift card calculation endpoints (rule layer caching) reducing p95 latency from 420ms to <b>230ms</b>.",
+          "Ensured OWASP best practices compliance (input sanitization, rate limiting, hardened JWT), mitigating automated malicious attempts by <b>70%</b>."
         ],
-        "specialties": "Elasticsearch | Golang | RabbitMQ | Redis | Search Indexing | Performance",
-        "skills": "Elasticsearch | Golang | RabbitMQ | Redis | SQL | Search Performance"
-      },
-      {
-        "company": "World Digital Solutions SAS",
-        "location": "Bucaramanga, Colombia [Search Platform]",
-        "role": "Backend Engineer (Search & Distributed Systems)",
-        "dates": "November 2022 – July 2025",
-        "bullets": [
-          "Developed and maintained <b>search indexing pipelines</b> and <b>distributed messaging</b> with <b>RabbitMQ</b> and <b>Redis</b>.",
-          "Implemented <b>search features</b> and <b>relevance tuning</b> using <b>Elasticsearch</b> and <b>PHP</b> for high-traffic microservices.",
-          "Worked closely with senior engineers to establish <b>best practices</b> and resolve complex challenges in <b>PHP</b> and <b>Go</b> codebases.",
-          "Participated in on-call rotation to support <b>platform reliability</b> and <b>performance</b>."
-        ],
-        "specialties": "Elasticsearch | PHP | Go | RabbitMQ | Redis | Microservices",
-        "skills": "Elasticsearch | PHP | Go | RabbitMQ | Redis | SQL | Microservices"
+        "specialties": "Payment Gateways | Checkout | Performance | Automated QA | Security",
+        "skills": "React | TypeScript | Node.js | Stripe | PayPal | Square | Jest | Playwright | CI/CD | Webhooks | OWASP"
       },
       {
         "company": "Colsapiens SAS",
-        "location": "Medellín, Colombia [Hardware Store - AI/Chatbot]",
+        "umbrella": "NexusQA (Freelance)",
+        "focus": "Multimodal AI chatbot and CRM automation",
+        "location": "Remote, Colombia [Hardware Store - AI/Chatbot]",
         "role": "AI & Automation Developer",
-        "dates": "April 2025 - August 2025",
+        "dates": "April 2025 - July 2025",
         "bullets": [
-          "Developed multimodal chatbot for hardware store integrating <b>OpenAI GPT-3.5 Turbo</b> and <b>Whisper API</b> achieving <b>95% accuracy</b> in voice recognition.",
+          "Developed multimodal chatbot for hardware store integrating <b>OpenAI GPT-4.5</b> and <b>Whisper API</b> achieving <b>95% accuracy</b> in voice recognition.",
           "Implemented <b>WhatsApp Business Cloud API</b> integration with voice, text, image and document processing reducing response time by <b>60%</b>.",
-          "Configured complete CRM automation with <b>n8n, Make and HubSpot</b> connecting MySQL and PostgreSQL databases for unified management.",
+          "Configured complete CRM automation with <b>n8n, Make and HubSpot</b> connecting MySQL and Firebase databases for unified management.",
           "Integrated <b>Twilio</b> for advanced voice functionalities and real-time transcription improving customer experience.",
           "Optimized multimodal conversational flows achieving <b>4 input types</b> (voice, text, image, documents) with contextual AI responses."
         ],
-        "specialties": "Conversational AI | WhatsApp Business | CRM Automation | Multimodal Processing | OpenAI APIs",
-        "skills": "OpenAI API | Whisper | WhatsApp Business | Twilio | HubSpot CRM | n8n | Make | MySQL | PostgreSQL | Node.js"
+        "specialties": "Conversational AI | CRM Automation | Multimodal Processing",
+        "skills": "OpenAI API | Whisper | WhatsApp Business | Twilio | HubSpot CRM | n8n | Make | MySQL | Firebase | Node.js"
+      },
+      {
+        "company": "World Digital Solutions SAS",
+        "location": "Bucaramanga, Colombia [Financial Sector]",
+        "role": "Fullstack POS Developer",
+        "dates": "August 2022 - July 2025",
+        "bullets": [
+          "Built and evolved critical modules (transactions, reconciliation, tokenization) in Angular web platforms and <b>Java/Spring</b> backend connected to multi-country POS terminals.",
+          "Integrated firmware and logic in <b>C</b> for EMV validation and pinpad flows, reducing field transaction failures by <b>22%</b> (p95 retries).",
+          "Orchestrated <b>CI/CD</b> pipelines (build, tests, static analysis, deployment) shortening change lead time from 3 days to <b>22 hours</b>.",
+          "Optimized APIs (batching, pooling, selective caching) reducing p95 latency by <b>38%</b> and JVM memory consumption by <b>25%</b>.",
+          "Implemented security controls (rotating JWT, HSM integration mock, rate limiting, hash signing) raising internal PCI-like compliance to <b>95%</b>."
+        ],
+        "specialties": "POS | Secure Transactions | Optimization | CI/CD | Integration",
+        "skills": "Java | Spring Boot | Angular | C | JWT | EMV | CI/CD | Optimization | Security"
       },
       {
         "company": "Hacienda Aldemar",
-        "location": "Remote / Colombia [Automation]",
-        "role": "Backend Engineer (Search & Data Processing, Freelance)",
+        "umbrella": "NexusQA (Freelance)",
+        "focus": "Agricultural operational automation and production visibility",
+        "location": "Remote / Colombia [Agricultural Sector]",
+        "role": "Odoo & Automation Developer (Freelance)",
         "dates": "February 2025 - April 2025",
         "bullets": [
-          "Automated <b>data processing pipelines</b> and <b>search indexing</b> using <b>Golang</b> and <b>RabbitMQ</b>.",
-          "Maintained <b>distributed messaging systems</b> with <b>Redis</b> for reliable data synchronization.",
-          "Worked with SQL databases to optimize <b>search queries</b> and <b>data relevance</b>."
+          "Extended <b>Odoo</b> modules in <b>Python</b> for agricultural management (batches, crops, livestock) with sectorized maps and irrigation/harvest calendar, raising operational visibility by <b>60%</b>.",
+          "Automated truck and route logistics planning reducing dispatch downtime by <b>25%</b> and transport overcosts by <b>15%</b>.",
+          "Implemented payroll and attendance control (validation and consolidation) decreasing manual settlement errors by <b>35%</b>.",
+          "Centralized production and sales records with weekly comparative reports, accelerating decision-making from 3 days to <b>24h</b>.",
+          "Ensured data integrity with migration scripts and tests (fixtures and validations) achieving 0% loss in transition."
         ],
-        "specialties": "Golang | RabbitMQ | Redis | SQL | Data Processing",
-        "skills": "Golang | RabbitMQ | Redis | SQL | Data Processing"
+        "specialties": "Agricultural Automation | Logistics | Smart Calendars | Reports",
+        "skills": "Python | Odoo | PostgreSQL | Integration | Testing | Maps | Scheduling"
       },
       {
         "company": "Flamingo",
-        "location": "Remote / Colombia [Distributed Systems]",
-        "role": "Backend Engineer (Search & Microservices, Freelance)",
+        "umbrella": "NexusQA (Freelance)",
+        "focus": "Multi-supplier inventory and distribution with access control",
+        "location": "Remote / Colombia [Food Sector]",
+        "role": "Fullstack Inventory Engineer (Freelance)",
         "dates": "November 2024 - February 2025",
         "bullets": [
-          "Developed <b>microservices</b> for <b>search indexing</b> and <b>performance optimization</b> using <b>PHP</b> and <b>Golang</b>.",
-          "Worked on <b>large-scale, high-traffic systems</b> with <b>RabbitMQ</b> and <b>Redis</b> for distributed messaging.",
-          "Partnered with senior engineers to resolve complex challenges and improve <b>search reliability</b>."
+          "Designed and developed <b>multi-supplier inventory</b> system (receiving, adjustments, batches and traceability) reducing stock-outs by <b>28%</b>.",
+          "Implemented <b>employee control</b> module (roles, audit, activity) raising transparency and reducing unauthorized access by <b>70%</b>.",
+          "Automated route calculation and wholesale/retail distribution decreasing order preparation times by <b>32%</b>.",
+          "Optimized critical queries (aggregations and filters) with indexes and API layer caching reducing p95 from 520ms to <b>240ms</b>.",
+          "Added <b>e2e tests (Cypress/Playwright)</b> integrated to pipeline reducing post-release incidents by <b>35%</b>."
         ],
-        "specialties": "PHP | Golang | RabbitMQ | Redis | Microservices | Search Performance",
-        "skills": "PHP | Golang | RabbitMQ | Redis | Microservices | Search Performance"
+        "specialties": "Inventory | Routes | Access Control | Performance | QA e2e",
+        "skills": "React | TypeScript | Node.js | Cypress | Playwright | Optimization | Security"
       }
     ],
+    "freelance_overview": "Under the NexusQA brand I collaborate as a freelancer helping companies and startups accelerate releases, improve performance, automate processes and strengthen quality and security. Open to short and medium-term projects (APIs, payments, inventory, operational platforms and optimization).",
+    "freelance_skills": "Odoo, Multi-supplier Inventory, API Optimization, Hybrid Data (PostgreSQL/MongoDB), Redis Caching, Logistics Automation, e2e QA, CI/CD, Metrics and monitoring",
     "education": [
       {
         "school": "Unidades Tecnológicas de Santander",
@@ -309,5 +326,168 @@
         "dates": "January 2019 – December 2020"
       }
     ]
+  },
+  "linkedin": {
+    "headline": "Fullstack Engineer | Java, Node.js, Python (Odoo) | Payments, POS, Inventory and Scalability | API Optimization & Automated QA",
+    "about": "Fullstack engineer with over 3 years building payment platforms, POS, inventory, e-commerce and operational automation. I combine Java/Spring and Node.js backend with React/Angular frontend and Python/Odoo to deliver resilient, secure and measurable solutions. I focus on reducing latency, scaling critical modules and raising quality through CI/CD and automated testing (unit, integration, e2e and performance). I enjoy translating business requirements into clean architecture, actionable metrics and fast delivery cycles.",
+    "value_proposition": "I accelerate launches with pragmatic architecture, optimize APIs (up to -45% p95 latency), strengthen security (JWT, OWASP, fraud controls) and enable scalability with caching, metrics and cross-cutting automation.",
+    "highlights": [
+      "+11% authorization rate and -18% checkout abandonment integrating multiple gateways (Stripe, PayPal, Square, Apple Pay, Google Pay).",
+      "-38% p95 latency and -25% JVM memory in multi-country POS platform with API and resource level optimizations.",
+      "350+ test cases (unit, integration, e2e, security, load) orchestrated via CI/CD decreasing critical bugs by 40%.",
+      "Stock-outs -28% with multi-supplier inventory system and batch traceability.",
+      "Report generation: 4 min to 50 s consolidating PostgreSQL + MongoDB + Redis + cloud search.",
+      "Payroll errors reduction 35% and operational visibility improvement 60% with custom Odoo modules.",
+      "Deployment lead time from 3 days to 22 h through end-to-end CI/CD pipelines."
+    ],
+    "core_skills": [
+      "Java / Spring Boot / Spring Cloud",
+      "Node.js / TypeScript / JavaScript",
+      "React / Angular",
+      "Python / Odoo",
+      "C (embedded POS components)",
+      "PostgreSQL / MongoDB / Redis",
+      "Microservices architecture",
+      "API Optimization / Performance",
+      "CI/CD (GitLab / Pipelines)",
+      "Testing (Jest, Playwright, Cypress)",
+      "Security (JWT, OWASP, EMV)",
+      "Observability / Metrics"
+    ],
+    "stack_detallado": {
+      "backend": "Java (Spring Boot, Spring Cloud), Node.js (Express / services), Python (Odoo), PHP (historical Laravel)",
+      "frontend": "React, Angular, optimized UI components, accessibility and performance",
+      "data": "PostgreSQL, MongoDB, normalized and hybrid modeling, indexes, tuning, Redis caching",
+      "devops_testing": "GitLab CI/CD, static analysis, unit tests, integration, e2e (Cypress/Playwright), load and security testing",
+      "arquitectura": "Microservices, queues/events, multi-layer caching, tokenization, idempotent webhooks",
+      "seguridad": "OWASP, hardened JWT, rate limiting, fraud mitigation, EMV/POS integrations"
+    },
+    "experience_summary": "Payments (omnichannel checkout, gateways and antifraud), multi-country transactional POS, distributed inventory, agricultural automation (maps and logistics), search optimization and hybrid data.",
+    "open_to": [
+      "Backend / Fullstack Engineer",
+      "Payments / Checkout Engineer",
+      "POS / Secure Transactions",
+      "Platform / Performance Engineer",
+      "Automation / Integrations"
+    ],
+    "call_to_action": "If you're building products where performance, transactional reliability and automated quality matter, let's talk.",
+    "keywords": [
+      "Fullstack Engineer",
+      "Java Developer",
+      "Spring Boot",
+      "Node.js",
+      "Python Odoo",
+      "Microservices",
+      "Payments",
+      "POS",
+      "Checkout Optimization",
+      "API Performance",
+      "CI/CD",
+      "Playwright",
+      "Cypress",
+      "Stripe",
+      "PayPal",
+      "Square",
+      "Redis",
+      "PostgreSQL",
+      "Security",
+      "OWASP",
+      "EMV"
+    ],
+    "elevator_pitch": "I develop and improve payment platforms, POS and inventory reducing latency, strengthening security and eliminating technical debt with frequent and measurable delivery.",
+    "short_bio": "Fullstack focused on impact: sustainable performance, security and scalability.",
+    "services": [
+      "API development and optimization (Java/Node)",
+      "Payment gateway and checkout integration",
+      "Architecture and scalability (microservices / caching)",
+      "CI/CD automation and continuous quality",
+      "e2e and performance testing (Cypress / Playwright)",
+      "POS systems and secure transactions",
+      "Odoo implementation and operational automation",
+      "Inventory design and traceability",
+      "Database optimization (PostgreSQL / Redis)",
+      "Hardening and security (JWT, OWASP)"
+    ],
+    "services_description": "I help teams launch and scale critical products: fast APIs (-45% latency), reliable payments (+11% authorization), traceable inventory (-28% stock-outs), solid CI/CD pipelines and automated tests (350+ cases) that reduce bugs by 40%. Focused on measurable impact and technical sustainability.",
+    "experience_linkedin": [
+      {
+        "company": "Artistshot",
+        "role": "Fullstack Payments Engineer",
+        "location": "Remote · USA",
+        "dates": "Jul 2025 – Aug 2025",
+        "achievements": [
+          "+11% authorization rate and -18% abandonment integrating Stripe, PayPal, Square, Apple Pay and Google Pay.",
+          "Designed idempotent checkout architecture with secure webhooks reducing reconciliation incidents by 35%.",
+          "350+ test cases (unit, integration, e2e, security and load) integrated to GitLab pipeline, -40% critical bugs.",
+          "Latency p95 taxes/discounts 420ms→230ms applying rule caching.",
+          "OWASP hardening (sanitization, rate limiting, robust JWT) mitigated 70% automated malicious attempts."
+        ],
+        "tech": "React, TypeScript, Node.js, Stripe, PayPal, Square, Webhooks, Playwright, Jest, CI/CD"
+      },
+      {
+        "company": "World Digital Solutions SAS",
+        "role": "Fullstack POS Developer",
+        "location": "Bucaramanga, Colombia",
+        "dates": "Aug 2022 – Jul 2025",
+        "achievements": [
+          "Critical modules (transactions, reconciliation, tokenization) for multi-country POS with Angular + Spring.",
+          "Firmware and logic in C for EMV validation reducing transaction failures by 22% (p95).",
+          "CI/CD pipelines reduced lead time 3 days→22 h (build, tests, static analysis, deploy).",
+          "API optimization: -38% p95 latency and -25% JVM memory (batching, pooling, selective cache).",
+          "Security: rotating JWT, rate limiting and signatures raised internal PCI-like compliance to 95%."
+        ],
+        "tech": "Java, Spring Boot, Angular, C, JWT, EMV, CI/CD, Performance"
+      },
+      {
+        "company": "Hacienda Aldemar",
+        "umbrella": "NexusQA (Freelance)",
+        "focus": "Agricultural automation and operational control",
+        "role": "Odoo & Automation Developer (Freelance)",
+        "location": "Remote · Colombia",
+        "dates": "Feb 2025 – Apr 2025",
+        "achievements": [
+          "Custom Odoo modules (batches, crops, livestock) with maps and calendar raising visibility by 60%.",
+          "Automated logistics planning: -25% downtime and -15% transport overcosts.",
+          "Digital payroll and attendance: -35% settlement errors.",
+          "Centralized reports accelerated decisions from 3 days to 24 h.",
+          "Migration with scripts and validations without data loss (0%)."
+        ],
+        "tech": "Python, Odoo, PostgreSQL, Scheduling, Maps, Integration"
+      },
+      {
+        "company": "Flamingo",
+        "umbrella": "NexusQA (Freelance)",
+        "focus": "Multi-supplier inventory and logistics",
+        "role": "Fullstack Inventory Engineer (Freelance)",
+        "location": "Remote · Colombia",
+        "dates": "Nov 2024 – Feb 2025",
+        "achievements": [
+          "Multi-supplier inventory and batch traceability: -28% stock-outs.",
+          "Employee control (roles, audit) reduced unauthorized access by 70%.",
+          "Automated routes and distribution: -32% order preparation time.",
+          "Critical queries p95 520ms→240ms (indexes + API caching).",
+          "e2e tests (Cypress/Playwright) lowered post-release incidents by 35%."
+        ],
+        "tech": "React, TypeScript, Node.js, Cypress, Playwright, Performance"
+      },
+      {
+        "company": "Colsapiens SAS",
+        "umbrella": "NexusQA (Freelance)",
+        "focus": "Multimodal AI chatbot and CRM automation",
+        "role": "AI & Automation Developer",
+        "location": "Medellín, Colombia",
+        "dates": "Apr 2025 – Aug 2025",
+        "achievements": [
+          "Multimodal chatbot OpenAI GPT-4.5 + Whisper: 95% voice recognition accuracy.",
+          "WhatsApp Business integrated: -60% response time with multimodal processing (voice, text, images, docs).",
+          "Complete CRM automation n8n + Make + HubSpot connecting MySQL and PostgreSQL.",
+          "Twilio advanced voice: real-time transcription and improved customer experience.",
+          "4 conversational input types with optimized contextual AI responses."
+        ],
+        "tech": "OpenAI API, Whisper, WhatsApp Business, Twilio, HubSpot CRM, n8n, Make, MySQL, PostgreSQL"
+      }
+    ],
+    "freelance_overview": "NexusQA is the umbrella for my freelance services: design and optimization of platforms (APIs, payments, POS, inventory, operational automation), with focus on metrics, sustainable scalability and reliable delivery. Available for remote collaborations and scope-based projects.",
+    "freelance_skills": "Odoo, Inventory, API Optimization, Hybrid Data, Redis Caching, e2e QA, CI/CD, Performance, Observability"
   }
 }
