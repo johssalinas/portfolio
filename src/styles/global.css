@@ -23,3 +23,17 @@
 /* Flowbite theme & plugin (usar resolución de paquete para que PostCSS lo encuentre) */
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
+
+/* Animaciones personalizadas para la foto de perfil */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
