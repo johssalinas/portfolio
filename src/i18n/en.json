@@ -56,6 +56,38 @@
         "isLatest": true
       },
       {
+        "company": "Colsapiens SAS",
+        "role": "Chatbot Developer (GCP) & Backend Engineer",
+        "period": "Apr 2025 - Jul 2025",
+        "location": "Remote • Colombia",
+        "type": "Hardware Store • AI/Chatbot",
+        "description": "Architected and deployed complex scalable chatbot on Google Cloud Platform using Dialogflow, with Python webhooks, BigQuery analytics and multichannel integration.",
+        "achievements": [
+          "95% voice recognition accuracy and -60% response time with Dialogflow",
+          "1,500+ daily interactions processed with sub-200ms latency on App Engine",
+          "Real-time analytics with BigQuery for metrics and automated reports",
+          "Multichannel integration WhatsApp Business, Web Chat and Twilio with unified context"
+        ],
+        "keyMetrics": {
+          "accuracy": "95%",
+          "response": "-60%",
+          "interactions": "1,500+/day"
+        },
+        "skills": [
+          "GCP",
+          "Dialogflow",
+          "Python 3",
+          "App Engine",
+          "BigQuery",
+          "Cloud Storage",
+          "WhatsApp Business",
+          "Twilio",
+          "Firebase",
+          "CI/CD"
+        ],
+        "isLatest": false
+      },
+      {
         "company": "World Digital Solutions",
         "role": "Fullstack POS Developer",
         "period": "Aug 2022 - Jul 2025",
@@ -140,38 +172,6 @@
           "PostgreSQL"
         ],
         "isLatest": false
-      },
-      {
-        "company": "Colsapiens SAS",
-        "role": "AI & Automation Developer",
-        "period": "Apr 2025 - Aug 2025",
-        "location": "Medellín • Colombia",
-        "type": "Hardware Store • AI/Chatbot",
-        "description": "Developed multimodal AI chatbot for hardware store, integrating WhatsApp Business, voice processing and complete CRM automation.",
-        "achievements": [
-          "95% accuracy in voice recognition with OpenAI Whisper API",
-          "-60% query response time with GPT-3.5 Turbo",
-          "Multimodal processing: voice, text, images and documents",
-          "Complete CRM automation with n8n, Make and HubSpot"
-        ],
-        "keyMetrics": {
-          "accuracy": "95%",
-          "response": "-60%",
-          "multimodal": "4 types"
-        },
-        "skills": [
-          "OpenAI API",
-          "Whisper",
-          "WhatsApp Business",
-          "Twilio",
-          "HubSpot CRM",
-          "n8n",
-          "Make",
-          "MySQL",
-          "PostgreSQL",
-          "Node.js"
-        ],
-        "isLatest": false
       }
     ]
   },
@@ -251,19 +251,19 @@
       {
         "company": "Colsapiens SAS",
         "umbrella": "NexusQA (Freelance)",
-        "focus": "Multimodal AI chatbot and CRM automation",
+        "focus": "Complex scalable chatbot development with GCP and multichannel integrations",
         "location": "Remote, Colombia [Hardware Store - AI/Chatbot]",
-        "role": "AI & Automation Developer",
+        "role": "Chatbot Developer (GCP) & Backend Engineer",
         "dates": "April 2025 - July 2025",
         "bullets": [
-          "Developed multimodal chatbot for hardware store integrating <b>OpenAI GPT-4.5</b> and <b>Whisper API</b> achieving <b>95% accuracy</b> in voice recognition.",
-          "Implemented <b>WhatsApp Business Cloud API</b> integration with voice, text, image and document processing reducing response time by <b>60%</b>.",
-          "Configured complete CRM automation with <b>n8n, Make and HubSpot</b> connecting MySQL and Firebase databases for unified management.",
-          "Integrated <b>Twilio</b> for advanced voice functionalities and real-time transcription improving customer experience.",
-          "Optimized multimodal conversational flows achieving <b>4 input types</b> (voice, text, image, documents) with contextual AI responses."
+          "Architected and deployed complex scalable chatbot on <b>Google Cloud Platform (GCP)</b> using <b>Dialogflow</b> for intent modeling, context management and conversational flows, achieving <b>95% accuracy</b> in voice recognition and <b>-60% response time</b>.",
+          "Developed <b>Python 3 webhooks</b> on <b>App Engine</b> implementing advanced business logic, external API integrations and CRM automation, processing <b>1,500+ daily interactions</b> with sub-200ms p95 latency.",
+          "Implemented <b>BigQuery</b> data warehouse for metrics storage, conversation analytics and automated reporting dashboards, enabling real-time monitoring and <b>4-type multimodal insights</b> (voice, text, image, documents).",
+          "Orchestrated <b>multichannel integration</b> (<b>WhatsApp Business Cloud API</b>, Web Chat, Twilio voice) with unified context and state management across channels improving customer experience by <b>65%</b>.",
+          "Designed <b>cloud-native microservices architecture</b> on GCP with <b>Cloud Storage</b> for document management, <b>Firebase</b> for real-time state, and <b>HubSpot CRM</b> automation via n8n/Make pipelines, following <b>Agile/Scrum</b> methodology with CI/CD automated deployments."
         ],
-        "specialties": "Conversational AI | CRM Automation | Multimodal Processing",
-        "skills": "OpenAI API | Whisper | WhatsApp Business | Twilio | HubSpot CRM | n8n | Make | MySQL | Firebase | Node.js"
+        "specialties": "GCP Chatbot Development | Dialogflow | Python Backend | Multichannel Integration | Cloud-Native Architecture",
+        "skills": "Google Cloud Platform (GCP) | Dialogflow | Python 3 | App Engine | BigQuery | Cloud Storage | WhatsApp Business API | Twilio | HubSpot CRM | Firebase | n8n | Make | CI/CD | Microservices | Agile/Scrum"
       },
       {
         "company": "World Digital Solutions SAS",
